@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get a website that makes you proud</title>
+        <style>* { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #333; line-height: 1.6; } .container { max-width: 1200px; margin: 0 auto; } .top-banner { background-color: #2d2d2d; color: white; text-align: center; padding: 8px; font-size: 12px; } .top-banner a { color: white; text-decoration: underline; } header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: white; max-width: 1200px; margin: 0 auto; } .logo { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 18px; } .logo-icon { width: 30px; height: 30px; background-color: #2d2d2d; border-radius: 4px; } .header-links { display: flex; gap: 30px; align-items: center; } .header-links a { color: #666; text-decoration: none; font-size: 14px; } .btn { background-color: #2d2d2d; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-block; } .btn:hover { background-color: #1a1a1a; } .hero { background-color: #f5f5f5; padding: 80px 0; } .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; gap: 60px; } .hero-content { flex: 1; max-width: 500px; } .hero h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; color: #2d2d2d; } .hero p { color: #666; margin-bottom: 30px; font-size: 16px; } .hero-image { flex: 1; background-color: #e0e0e0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 4px; } .success-section { display: flex; justify-content: space-around; padding: 40px; background-color: white; max-width: 1200px; margin: 0 auto; } .success-item { text-align: center; color: #666; font-size: 14px; } .struggle-section { padding: 80px 40px; display: flex; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; } .struggle-image { flex: 1; background-color: #f5f5f5; height: 300px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 4px; } .struggle-content { flex: 1; } .struggle-content h2 { font-size: 32px; margin-bottom: 20px; color: #2d2d2d; } .struggle-content ul { list-style: none; } .struggle-content li { padding: 8px 0; padding-left: 20px; position: relative; color: #666; } .struggle-content li:before { content: "•"; position: absolute; left: 0; color: #2d2d2d; } .value-prop-section { background-color: #f5f5f5; padding: 80px 0; text-align: center; } .value-prop-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; } .value-prop-section h2 { font-size: 36px; margin-bottom: 60px; color: #2d2d2d; } .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; } .service-card { background-color: white; padding: 30px; border-radius: 4px; text-align: center; } .service-icon { background-color: #f5f5f5; height: 100px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 4px; } .service-card h3 { font-size: 20px; margin-bottom: 15px; color: #2d2d2d; } .service-card p { color: #666; font-size: 14px; line-height: 1.6; } .empathy-section { padding: 80px 40px; text-align: center; max-width: 1200px; margin: 0 auto; } .empathy-section h2 { font-size: 32px; margin-bottom: 20px; color: #2d2d2d; } .empathy-section p { color: #666; max-width: 800px; margin: 0 auto 40px; } .logos-grid { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; } .logo-box { background-color: #f5f5f5; width: 120px; height: 80px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; border-radius: 4px; } .pricing-section { background-color: #f5f5f5; padding: 80px 0; text-align: center; } .pricing-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; } .pricing-section h2 { font-size: 36px; margin-bottom: 60px; color: #2d2d2d; } .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; } .pricing-card { background-color: white; padding: 40px 30px; border-radius: 4px; } .pricing-tier { color: #999; font-size: 12px; text-transform: uppercase; margin-bottom: 10px; } .pricing-amount { font-size: 42px; font-weight: 600; margin-bottom: 20px; color: #2d2d2d; } .pricing-card p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 30px; } .how-it-works { padding: 80px 40px; text-align: center; max-width: 1200px; margin: 0 auto; } .how-it-works h2 { font-size: 36px; margin-bottom: 60px; color: #2d2d2d; } .steps-container { max-width: 800px; margin: 0 auto; } .step { display: flex; gap: 40px; margin-bottom: 50px; text-align: left; } .step-image { background-color: #f5f5f5; width: 200px; height: 150px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 4px; } .step-content h3 { font-size: 20px; margin-bottom: 15px; color: #2d2d2d; } .step-content p { color: #666; line-height: 1.6; } .explanatory-section { background-color: #f5f5f5; padding: 80px 0; } .explanatory-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; gap: 60px; align-items: center; } .explanatory-content { flex: 1; } .explanatory-content h2 { font-size: 32px; margin-bottom: 20px; color: #2d2d2d; } .explanatory-content p { color: #666; margin-bottom: 30px; line-height: 1.8; } .explanatory-image { flex: 1; background-color: white; height: 300px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 4px; } .download-section { padding: 80px 40px; text-align: center; max-width: 1200px; margin: 0 auto; } .download-section h2 { font-size: 28px; margin-bottom: 10px; color: #2d2d2d; } .download-section p { color: #666; margin-bottom: 40px; } .form-row { display: flex; gap: 20px; max-width: 700px; margin: 0 auto; justify-content: center; } .form-row input { padding: 12px 16px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; flex: 1; max-width: 200px; } footer { background-color: #f5f5f5; padding: 60px 0 20px; } .footer-content { display: flex; justify-content: space-between; margin-bottom: 40px; max-width: 1200px; margin: 0 auto 40px; padding: 0 40px; } .footer-logo { display: flex; flex-direction: column; gap: 20px; } .footer-logo-icon { width: 30px; height: 30px; background-color: #2d2d2d; border-radius: 4px; } .social-icons { display: flex; gap: 15px; } .social-icon { width: 30px; height: 30px; background-color: #2d2d2d; border-radius: 50%; } .footer-links { display: flex; gap: 60px; } .footer-column h4 { margin-bottom: 15px; color: #2d2d2d; font-size: 16px; } .footer-column ul { list-style: none; } .footer-column li { margin-bottom: 10px; } .footer-column a { color: #666; text-decoration: none; font-size: 14px; } .footer-bottom { text-align: center; color: #999; font-size: 12px; padding-top: 20px; border-top: 1px solid #ddd; max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; } .bottom-banner { background-color: #2d2d2d; color: white; text-align: center; padding: 15px; font-size: 12px; } .bottom-banner a { color: white; text-decoration: underline; }</style>
+    </head>
+    <body style="background-color: #ffffff;">
+        <div class="top-banner">Start your IAM journey now with IAM On Demand</div>
+        <header>
+            <div class="logo">
+                <div class="logo-icon" style="background-image: url('logo.png'); background-repeat: no-repeat; background-position: center center; background-size: contain; background-color: #ffffff;"></div>                IAM On Demand
+            </div>
+            <nav class="header-links"><a href="#">Download Free Guide</a><a href="#" class="btn" style="color: #ffffff;">Buy Now</a>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Secure, Scalable Keycloak Hosting. Ready in Minutes.</h1>
+                    <p>Simplify Identity and Access Management with our fully managed, turnkey Keycloak on demand solutions.</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="hero-image" style="background-image: url('Gemini_Generated_Image_uczyovuczyovuczy.png'); background-position: center center; background-size: contain; background-repeat: no-repeat;"></div>
+            </div>
+        </section>
+        <section class="success-section">
+            <div class="success-item">&#10003; Resolve compliance pressure</div>
+            <div class="success-item">&#10003; Save time and money</div>
+            <div class="success-item">&#10003; Benefit from world class open source IAM
+                <!-- notionvc: ec11bb5c-e1d0-4ba2-aaa9-aca7ff5dc46f -->
+            </div>
+            <div class="success-item">&#10003; Build scalability and automation</div>
+        </section>
+        <section class="struggle-section">
+            <div class="struggle-image" style="background-image: url('stakes_notext.png'); background-position: center center; background-size: contain;"></div>
+            <div class="struggle-content">
+                <h2>How much is managing access rights for your users costing you today?</h2>
+                <ul>
+                    <li>Are your current login and access management processes scalable?
+                        <!-- notionvc: f1e34743-688c-4df0-8d70-44d1b59dfd2e -->
+                    </li>
+                    <li>Have you already burned a lot of budget on proprietary, commercial software solutions?
+                        <!-- notionvc: 1959321f-5594-4e5d-b045-f2be027e9263 -->
+                    </li>
+                    <li>Do you feel uncomfortable by the possibility of vendor lock-in?
+                        <!-- notionvc: 2472f252-e5ec-493a-b56d-fa083bbaa353 -->
+                    </li>
+                    <li>How many cost and effort have you already spent trying to host an open source solution yourself?
+                        <!-- notionvc: a7e3d38c-89ae-430e-91ad-4210eed1b768 -->
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="value-prop-section">
+            <div class="value-prop-inner">
+                <h2>Meet &quot;IAM On Demand&quot;:</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon" style="background-image: url('server-hosting-svgrepo-com.svg'); background-position: center center; background-size: contain; background-repeat: repeat-y;"></div>
+                        <h3>Easy online hosting</h3>
+                        <p>Pick your tier, place your order online and fire up your Keycloak IAM system</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" style="background-image: url('compliance-svgrepo-com.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat;"></div>
+                        <h3>Resolve compliance pressure</h3>
+                        <p>Master GDPR, SOC2, ISO 27001 through central logging, auditing, session controls and strong authentication.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" style="background-image: url('automation-marketing-launch-rocket-laptop-svgrepo-com.svg'); background-size: contain; background-position: center center; background-repeat: no-repeat;"></div>
+                        <h3>Scalability and automation</h3>
+                        <p>Centralize user identity so all apps rely on one user directory and one login flow.</p>
+                    </div>
+                </div>
+                <button class="btn">Buy Now</button>
+            </div>
+        </section>
+        <section class="empathy-section">
+            <h2>We understand your struggle.</h2>
+            <div style="max-width:720px;margin:0 auto;text-align:left;padding:16px;">
+                <ul style="margin:0;padding-left:1.25rem;line-height:1.5;">
+                    <li>Scaling Keycloak for growing user bases without downtime or skyrocketing costs.</li>
+                    <li>Ensuring GDPR, SOC 2, and other compliance standards without the DIY hassle.</li>
+                    <li>Integrating seamlessly with your existing stack (LDAP, OAuth, SAML&#8212;you name it) while keeping things simple.</li>
+                </ul>
+                <p>You're not alone — thousands of teams just like yours have felt the frustration of open-source IAM gone wrong, but it doesn't have to be that way.</p>
+                <p>With over a decade of expertise in open-source IAM, IAM On Demand isn&apos;t just another hosting provider&#8212;we&apos;re Keycloak specialists. Our team has deployed Keycloak for enterprises worldwide, optimizing for performance, security, and cost-efficiency. When you choose us, you get:<li>
+                        <b>99.99% Uptime SLA:</b> Battle-tested infrastructure on Hetzner, AWS and Google Cloud.
+                    </li><li>
+                        <b>Expert Support:</b> 24/7 access to Keycloak pros who speak your language.
+                    </li><li>
+                        <b>Proven Plan:</b> A straightforward 3-step onboarding to get you live in days, not months.
+                    </li></p>
+            </div>
+            <div class="logos-grid">
+                <div class="logo-box" style="background-image: url('logoipsum-410.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                <div class="logo-box" style="background-image: url('logoipsum-356.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                <div class="logo-box" style="background-image: url('logoipsum-378.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                <div class="logo-box" style="background-image: url('logoipsum-404.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                <div class="logo-box" style="background-image: url('logoipsum-349.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+            </div>
+            <button class="btn">Buy now</button>
+        </section>
+        <section class="pricing-section">
+            <div class="pricing-inner">
+                <h2>Packages & Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-tier">Basic</div>
+                        <div class="pricing-amount">$49</div>
+                        <p>Start building secure identity management today with unlimited users and all core Keycloak authentication features. Perfect for developers testing IAM integration. Get started with straightforward single-cluster setup, email support, and transparent pricing&#8212;no setup fees, no surprises.</p>
+                        <button class="btn">See details</button>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-tier">BUSINESS</div>
+                        <div class="pricing-amount">$999</div>
+                        <p>Scale your application with confidence using redundant clusters, enterprise-grade 99.95% uptime SLA, and priority support. Unlock advanced capabilities including custom domains, theme customization, and hourly expert consulting. Ideal for growing SaaS platforms managing thousands of authenticated users.</p>
+                        <button class="btn">See details</button>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-tier">ENTERPRISE</div>
+                        <div class="pricing-amount">$1999</div>
+                        <p>Mission-critical identity infrastructure with 99.995% availability, 24/7 dedicated support team, and many ready made integrations. Deploy globally across regions, access private network isolation, and receive white-glove onboarding. Built for high-security, high-scale enterprise environments.</p>
+                        <button class="btn">See details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="how-it-works">
+            <h2>How it Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-image" style="background-image: url('plan_article-blog-blogging.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                    <div class="step-content">
+                        <h3>1. Choose your hosting tier</h3>
+                        <p>Pick the Keycloak hosting plan that fits your security, performance, and compliance requirements. Whether you need a robust development environment, a scalable production cluster, or enterprise-grade high availability, we have a tier designed for your organization.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-image" style="background-image: url('plan_coding-gear-options.svg'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #ffffff;"></div>
+                    <div class="step-content">
+                        <h3>2. We Configure &amp; Maintain Your Keycloak</h3>
+                        <p>Our team installs, secures, and optimizes your dedicated Keycloak environment. You get ongoing updates, monitoring, and support&#8212;so your identity platform stays reliable, compliant, and always up to date without draining internal engineering time.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-image" style="background-image: url('plan_smartphone-mobile-phone.svg'); background-position: center center; background-size: contain; background-color: #ffffff;"></div>
+                    <div class="step-content">
+                        <h3>3. Authenticate Users With Confidence</h3>
+                        <p>Integrate Keycloak into your applications and immediately start managing logins, roles, and single sign-on with total confidence. Your team stays focused on your core business while we ensure your identity infrastructure just works.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn">Buy now</button>
+        </section>
+        <section class="explanatory-section">
+            <div class="explanatory-inner">
+                <div class="explanatory-content">
+                    <h2>Explanatory Paragraph</h2>
+                    <p>Companies that rely on secure digital access often struggle with the cost and complexity of managing identity infrastructure on their own. At <b>IAM On Demad</b>, we provide fully managed Keycloak hosting so you never have to worry about uptime, scaling, patching, or security hardening. Our experts deploy and maintain a dedicated Keycloak environment tailored to your organization&rsquo;s compliance and performance needs. Simply choose the hosting tier that fits your use case, and we handle everything from configuration to ongoing monitoring. With a reliable identity platform in place, your team can authenticate users confidently, meet security requirements, and stay focused on building the products your customers care about.</p>
+                    <button class="btn">Buy now</button>
+                </div>
+                <div class="explanatory-image" style="background-image: url('explanatory_image.png'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #f5f5f5;"></div>
+            </div>
+        </section>
+        <section class="download-section">
+            <h2>Download our Free Guide.</h2>
+            <p>20 Use Cases To Maximize The Business Potential In Keycloak</p>
+            <div class="form-row">
+                <input type="text" placeholder="First name">
+                <input type="text" placeholder="Last name">
+                <input type="email" placeholder="Email address">
+                <button class="btn">Download</button>
+            </div>
+        </section>
+        <footer style="background-color: #f5f5f5;">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="footer-logo-icon" style="background-image: url('logo.png'); background-position: center center; background-size: contain; background-repeat: no-repeat; background-color: #f5f5f5;"></div>
+                        IAM On Demand
+                    </div>
+                    <div class="social-icons">
+</div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Interior Page</a>
+                            </li>
+                            <li>
+                                <a href="#">Services Page</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Free Guide</a>
+                            </li>
+                            <li>
+                                <a href="#">Check Your Message</a>
+                            </li>
+                            <li>
+                                <a href="#">Business Book Guide</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2025 Avectra. All rights reserved.</div>
+        </footer>
+        <div class="bottom-banner">Start your IAM journey now with IAM On Demand</div>
+    </body>
+</html>
