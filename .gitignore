@@ -1,0 +1,6 @@
+# Ignore specific files
+pinegrow.json
+
+# Ignore directories
+_pgbackup/
+_pginfo/
