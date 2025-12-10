@@ -1,0 +1,86 @@
+# Site Settings
+title: "IAM On Demand"
+tagline: "Secure, Scalable Keycloak Hosting"
+description: "Secure, scalable Keycloak hosting ready in minutes. Simplify Identity and Access Management with our fully managed, turnkey solutions for compliance and automation."
+url: "https://iam-ondemand.com"
+baseurl: ""
+
+# Author/Company
+author:
+  name: "Avectra"
+  email: "info@iam-ondemand.com"
+
+# SEO settings for jekyll-seo-tag
+logo: /assets/images/logo.png
+twitter:
+  card: summary_large_image
+
+social:
+  name: IAM On Demand
+  links:
+    - https://twitter.com/iamondemand
+    - https://linkedin.com/company/iamondemand
+
+# Google Analytics
+google_analytics: G-4ZDKYN07P9
+
+# Formspree form ID (replace with your actual form ID)
+formspree_form_id: "YOUR_FORM_ID"
+
+# Collections for blog and wiki
+collections:
+  wiki:
+    output: true
+    permalink: /docs/:path/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "IAM On Demand Team"
+  - scope:
+      path: ""
+      type: "wiki"
+    values:
+      layout: "wiki"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page/:num/"
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Permalink structure
+permalink: pretty
+
+# Timezone
+timezone: UTC

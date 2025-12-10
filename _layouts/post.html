@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header" style="padding: var(--space-12) 0; background-color: hsl(var(--muted)); text-align: center;">
+    <div class="container">
+      <div class="post-meta" style="font-size: var(--text-sm); color: hsl(var(--muted-foreground)); margin-bottom: var(--space-4);">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.author %}
+        <span style="margin: 0 var(--space-2);">•</span>
+        <span itemprop="author">{{ page.author }}</span>
+        {% endif %}
+        {% if page.reading_time %}
+        <span style="margin: 0 var(--space-2);">•</span>
+        <span>{{ page.reading_time }} min read</span>
+        {% endif %}
+      </div>
+      
+      <h1 itemprop="headline">{{ page.title }}</h1>
+      
+      {% if page.description %}
+      <p class="post-description" style="font-size: var(--text-lg); margin-top: var(--space-4); max-width: 700px; margin-left: auto; margin-right: auto;">
+        {{ page.description }}
+      </p>
+      {% endif %}
+      
+      {% if page.tags %}
+      <div class="post-tags" style="margin-top: var(--space-4);">
+        {% for tag in page.tags %}
+        <span class="badge" style="margin-right: var(--space-2);">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+  
+  <div class="post-content container" itemprop="articleBody" style="max-width: 800px; padding: var(--space-12) var(--space-4);">
+    {{ content }}
+  </div>
+  
+  <footer class="post-footer container" style="max-width: 800px; padding: 0 var(--space-4) var(--space-12); border-top: 1px solid hsl(var(--border)); padding-top: var(--space-6); margin-top: var(--space-8);">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline" style="text-decoration: none;">
+        ← {{ page.previous.title | truncate: 30 }}
+      </a>
+      {% endif %}
+      
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="btn btn-outline" style="text-decoration: none; margin-left: auto;">
+        {{ page.next.title | truncate: 30 }} →
+      </a>
+      {% endif %}
+    </div>
+  </footer>
+</article>

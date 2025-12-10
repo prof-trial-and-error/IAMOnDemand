@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href="{{ '/' | relative_url }}" class="logo">
+        <div class="logo-icon" style="background-image: url('{{ '/assets/images/sitegraphics/logo.png' | relative_url }}'); background-color: transparent;"></div>
+        {{ site.title }}
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>{{ site.data.navigation.footer.about.title }}</h4>
+        <ul>
+          {% for link in site.data.navigation.footer.about.links %}
+          <li>
+            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>{{ site.data.navigation.footer.resources.title }}</h4>
+        <ul>
+          {% for link in site.data.navigation.footer.resources.links %}
+          <li>
+            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.
+  </div>
+</footer>
+
+<div class="bottom-banner" role="note">
+  Start your IAM journey now with {{ site.title }}
+</div>

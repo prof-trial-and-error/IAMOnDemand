@@ -1,6 +1,35 @@
-# Ignore specific files
-pinegrow.json
+# Jekyll generated files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# Ignore directories
-_pgbackup/
-_pginfo/
+# Ruby/Bundler
+vendor/
+.bundle/
+Gemfile.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+
+# Node (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log

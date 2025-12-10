@@ -1,0 +1,47 @@
+# Pricing tiers
+tiers:
+  - name: "Basic"
+    price: "$49"
+    period: "/month"
+    description: "Start building secure identity management today with unlimited users and all core Keycloak authentication features. Perfect for developers testing IAM integration. Get started with straightforward single-cluster setup, email support, and transparent pricing—no setup fees, no surprises."
+    features:
+      - "Unlimited users"
+      - "Core Keycloak features"
+      - "Single-cluster setup"
+      - "Email support"
+      - "No setup fees"
+    cta_text: "See details"
+    cta_url: "/pricing/basic/"
+    highlighted: false
+
+  - name: "Business"
+    price: "$999"
+    period: "/month"
+    description: "Scale your application with confidence using redundant clusters, enterprise-grade 99.95% uptime SLA, and priority support. Unlock advanced capabilities including custom domains, theme customization, and hourly expert consulting. Ideal for growing SaaS platforms managing thousands of authenticated users."
+    features:
+      - "Everything in Basic"
+      - "Redundant clusters"
+      - "99.95% uptime SLA"
+      - "Priority support"
+      - "Custom domains"
+      - "Theme customization"
+      - "Hourly expert consulting"
+    cta_text: "See details"
+    cta_url: "/pricing/business/"
+    highlighted: true
+
+  - name: "Enterprise"
+    price: "$1999"
+    period: "/month"
+    description: "Mission-critical identity infrastructure with 99.995% availability, 24/7 dedicated support team, and many ready made integrations. Deploy globally across regions, access private network isolation, and receive white-glove onboarding. Built for high-security, high-scale enterprise environments."
+    features:
+      - "Everything in Business"
+      - "99.995% availability"
+      - "24/7 dedicated support"
+      - "Global deployment"
+      - "Private network isolation"
+      - "White-glove onboarding"
+      - "Ready-made integrations"
+    cta_text: "See details"
+    cta_url: "/pricing/enterprise/"
+    highlighted: false

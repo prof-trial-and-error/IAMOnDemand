@@ -1,0 +1,99 @@
+<!-- Lead Capture / Download Form -->
+<form id="lead-form" action="https://formspree.io/f/{{ site.formspree_form_id }}" method="POST" class="form-row">
+  <!-- Honeypot spam prevention -->
+  <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
+  
+  <!-- Hidden configuration -->
+  <input type="hidden" name="_subject" value="New Lead: Free Guide Download">
+  
+  <input 
+    type="text" 
+    name="firstName" 
+    placeholder="First name" 
+    class="input" 
+    required 
+    aria-label="First name"
+    aria-required="true"
+  >
+  
+  <input 
+    type="text" 
+    name="lastName" 
+    placeholder="Last name" 
+    class="input" 
+    required 
+    aria-label="Last name"
+    aria-required="true"
+  >
+  
+  <input 
+    type="email" 
+    name="_replyto" 
+    placeholder="Email address" 
+    class="input" 
+    required 
+    aria-label="Email address"
+    aria-required="true"
+    autocomplete="email"
+  >
+  
+  <button type="submit" class="btn btn-primary">
+    {{ include.button_text | default: "Download" }}
+  </button>
+</form>
+
+<p id="form-status" aria-live="polite"></p>
+
+<script>
+(function() {
+  const form = document.getElementById('lead-form');
+  if (!form) return;
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const status = document.getElementById('form-status');
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        status.textContent = '✓ Success! Check your email for the download link.';
+        status.style.color = 'hsl(142, 76%, 36%)';
+        form.reset();
+        
+        // Optional: Track conversion
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'Lead',
+            'event_label': 'Free Guide Download'
+          });
+        }
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          throw new Error(data.errors.map(e => e.message).join(', '));
+        }
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      status.textContent = 'Error: ' + (error.message || 'Please try again.');
+      status.style.color = 'hsl(0, 84%, 60%)';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  });
+})();
+</script>
