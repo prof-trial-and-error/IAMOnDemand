@@ -1,0 +1,71 @@
+<script type="text/javascript" src="{{ '/assets/js/flexy-menu.js' | relative_url }}"></script>
+<script type="text/javascript">$(document).ready(function(){$(".flexy-menu").flexymenu({speed: 400,type: "horizontal",align: "right"});});</script>
+<script type="text/javascript" src="{{ '/assets/js/move-top.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ '/assets/js/easing.js' | relative_url }}"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+    });
+});
+</script>
+<script>
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+</script>
+<script>
+const navbarMenu = document.getElementById("menu");
+const burgerMenu = document.getElementById("burger");
+const headerMenu = document.getElementById("header");
+
+burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("is-active");
+    navbarMenu.classList.toggle("is-active");
+
+    if (navbarMenu.classList.contains("is-active")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "initial";
+    }
+});
+
+const removeMenu = () => {
+    burgerMenu.classList.remove("is-active");
+    navbarMenu.classList.remove("is-active");
+    document.body.style.overflow = "initial";
+};
+
+document.querySelectorAll(".menu-link").forEach((link) => {
+    link.addEventListener("click", removeMenu);
+});
+
+window.addEventListener(
+    "scroll",
+    (() => {
+        let lastScrollPosition = 0;
+
+        return () => {
+            const currentScrollPosition = window.scrollY;
+
+            if (currentScrollPosition > lastScrollPosition) {
+                headerMenu.classList.add("is-sticky");
+            } else {
+                headerMenu.classList.remove("is-sticky");
+            }
+
+            lastScrollPosition = currentScrollPosition;
+        };
+    })()
+);
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        if (navbarMenu.classList.contains("is-active")) {
+            removeMenu();
+        }
+    }
+});
+</script>

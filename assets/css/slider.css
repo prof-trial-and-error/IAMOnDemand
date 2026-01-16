@@ -1,0 +1,81 @@
+ol { width:30%; right:0; left:35%; background:#fff; bottom:48px; text-align:center;padding:0;height:35px; position:absolute;}
+ol li{margin:12px 5px 0 10px; padding:0; display:inline-block; text-align:center; list-style:none; width:11px; font-size:0px; background:url(../images/n_pic1.jpg) no-repeat; height:11px;line-height:28px; position:relative; z-index:99999;}
+ol li a{float:left; width:11px; height:11px;  padding:0 0px;text-decoration:none;}
+ol li.current a{background:url(../images/n_pic2.jpg) no-repeat;}
+ol li a:focus, .prevBtn a:focus, .nextBtn a:focus{outline:none;}
+ #container, #slider {
+            width: auto;
+        }
+
+        #slider, #slider img {
+            width: 100%;
+        }
+.graphic, .prevBtn, .nextBtn{margin:0;padding:0;display:block;overflow:hidden;text-indent:-8000px;}
+
+.prevBtn, .nextBtn {display:block;width:43px;height:43px;position:absolute;left:0%; top:45%; z-index:99;background:url(../images/prev_pic.jpg) no-repeat 0 0; background-size:contain;  cursor:pointer;}	
+.nextBtn{left:95.92%;}														
+.nextBtn {background:url(../images/next_pic.jpg)  no-repeat 0 0; background-size:contain;}
+.banner_text{position:absolute; width:60%; right:0%; top:15%;}
+.banner_text h2{font:bold 34px Arial, Helvetica, sans-serif; color:#fff; text-align:center; margin:0px; padding:0px; line-height:normal;}
+.banner_text p{font:normal 14px Arial, Helvetica, sans-serif; color:#fff; margin:0px; text-align:center; padding:25px 0 25px 0; line-height:20px;}
+.banner_text h3{background:#fff; border:1px solid #d2d2d0; font:normal 16px Arial, Helvetica, sans-serif; color:#000; text-align:center; width:46%; margin:60px 0 0 27%; padding:0px; line-height:34px;}
+.banner_text h3 a{color:#000;}
+.banner_text h4{ border:1px solid #fff; font:normal 16px Arial, Helvetica, sans-serif; color:#000; text-align:center; width:46%; margin:20px 0 0 27%; padding:0px; line-height:34px;}
+.banner_text h4 a{color:#fff;}
+
+
+.caption {
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:25px;
+            text-align:center;
+            color: #000000;
+            background: #ffffff;
+            background:transparent;
+            background:rgba(255,255,255,0.7);
+            /* Getting a semi-transparent background in IE */
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#a3ffffff,endColorstr=#a3ffffff);
+            zoom: 1;
+        }
+        #sliderControls {
+            margin-top:10px;
+        }
+        #sliderControls img{
+            border:none;margin: 0 7px 0 0;cursor:pointer;
+        }
+        #sliderControls img:not(.loaded) {
+            opacity: 0.001;
+            height:10px;
+        }
+        #sliderControlsContainer .controls a {
+            top: -10px;
+        }
+
+@media(max-width:929px){
+.nextBtn{left:93.92%;}	
+}
+
+@media(max-width:767px){
+.prevBtn, .nextBtn{display:none;}
+.banner_text{width:100%; text-align:center;}
+.banner_text h2{font-size:24px;}
+.banner_text h3{display:none;}
+.banner_text h4{display:none;}
+
+}
+
+
+@media(max-width:479px){
+
+
+}
+
+
+@media(max-width:319px){
+
+
+}
+
+

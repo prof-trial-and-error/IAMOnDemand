@@ -1,42 +1,41 @@
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <a href="{{ '/' | relative_url }}" class="logo">
-        <div class="logo-icon" style="background-image: url('{{ '/assets/images/sitegraphics/logo.png' | relative_url }}'); background-color: transparent;"></div>
-        {{ site.title }}
-      </a>
+<footer>
+    <div class="footerarea">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footemenu">
+                        <ul>
+                            <li><a href="#">Imprint</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="logo footerlogo">
+                        <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="logo"></a>
+                    </div>
+                    <div class="darklogo footerlogo">
+                        <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/whiltlogo.png' | relative_url }}" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footemenu2">
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Withdrawal Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="footer-links">
-      <div class="footer-column">
-        <h4>{{ site.data.navigation.footer.about.title }}</h4>
-        <ul>
-          {% for link in site.data.navigation.footer.about.links %}
-          <li>
-            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>{{ site.data.navigation.footer.resources.title }}</h4>
-        <ul>
-          {% for link in site.data.navigation.footer.resources.links %}
-          <li>
-            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div class="footer-bottom">
-    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.
-  </div>
 </footer>
-
-<div class="bottom-banner" role="note">
-  Start your IAM journey now with {{ site.title }}
-</div>
