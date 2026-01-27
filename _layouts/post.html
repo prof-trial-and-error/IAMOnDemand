@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    <div class="header_area">
+        {% include header.html %}
+        <div class="slider_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="w-h4">
+                            <h4><img src="{{ '/assets/images/textborder.png' | relative_url }}" alt=""> Blog <img src="{{ '/assets/images/textborder2.png' | relative_url }}" alt=""></h4>
+                        </div>
+                        <div class="n-h4">
+                            <h4><img src="{{ '/assets/images/wtextborder.png' | relative_url }}" alt=""> Blog <img src="{{ '/assets/images/wtextborder2.png' | relative_url }}" alt=""></h4>
+                        </div>
+                        <h1>{{ page.title }}</h1>
+                        <p>{{ page.date | date: "%B %d, %Y" }}{% if page.author %} &bull; {{ page.author }}{% endif %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whychoosearea">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="imprint-content blog-content">
+                        {{ content }}
+                        <p class="blog-back-link"><a href="{{ '/blog' | relative_url }}">&larr; Back to Blog</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+</html>

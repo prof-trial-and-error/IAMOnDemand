@@ -6,12 +6,14 @@ _site/
 
 # Bundler
 .bundle/
+vendor/
 
-# OS generated files
-.DS_Store
-.DS_Store?
-ehthumbs.db
-Thumbs.db
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
 # OS files
 .DS_Store

@@ -1,0 +1,44 @@
+---
+layout: default
+title: Blog
+permalink: /blog
+---
+
+<div class="header_area">
+    {% include header.html %}
+    <div class="slider_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="w-h4">
+                        <h4><img src="{{ '/assets/images/textborder.png' | relative_url }}" alt=""> News &amp; Insights <img src="{{ '/assets/images/textborder2.png' | relative_url }}" alt=""></h4>
+                    </div>
+                    <div class="n-h4">
+                        <h4><img src="{{ '/assets/images/wtextborder.png' | relative_url }}" alt=""> News &amp; Insights <img src="{{ '/assets/images/wtextborder2.png' | relative_url }}" alt=""></h4>
+                    </div>
+                    <h1>Blog</h1>
+                    <p>Latest news, tips, and insights about Identity and Access Management</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="whychoosearea">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog-list">
+                    {% for post in site.posts %}
+                    <div class="blog-item">
+                        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                        <p class="blog-meta">{{ post.date | date: "%B %d, %Y" }}{% if post.author %} &bull; {{ post.author }}{% endif %}</p>
+                        <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                        <a href="{{ post.url | relative_url }}" class="read-more">Read more &rarr;</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
