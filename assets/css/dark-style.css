@@ -8,6 +8,11 @@
 .dark-mode .header_area{background:url(../images/blackbannerbg.png) no-repeat top #000; background-size: cover;}
 .dark-mode .aboutharea{background:url(../images/abblackdemandbg.png) no-repeat top #000; background-size: cover;}
 
+.dark-mode .page-header{background: url(../images/blackbannerbg.png) no-repeat top #000; background-size: cover;}
+.dark-mode .page-header .slider_area h1{color: #fff;}
+.dark-mode .page-header .slider_area p{color: #c5c7d0;}
+.dark-mode .page-header .slider_area h4{color: #7b8fff;}
+
 .dark-mode .header{background: #000;}
 .dark-mode .menu-link{color: #fff;}
 
@@ -65,6 +70,35 @@
 .dark-mode .whychoosearea h4{color: #fff;}
 .dark-mode .whychoosearea h2{color: #fff;}
 .dark-mode .whychoosearea p{color: #fff;}
+
+.dark-mode .about-content p{color: #fff;}
+.dark-mode .about-content h2{color: #fff;}
+.dark-mode .about-content h3{color: #fff;}
+.dark-mode .about-content ul li{color: #fff;}
+.dark-mode .about-content a{color: #7b8fff;}
+.dark-mode .about-content a:hover{color: #fff;}
+
+.dark-mode .blog-item{border-bottom-color: #353535;}
+.dark-mode .blog-item h2 a{color: #fff;}
+.dark-mode .blog-item h2 a:hover{color: #7b8fff;}
+.dark-mode .blog-meta{color: #9ca3af;}
+.dark-mode .blog-item p{color: #c5c7d0;}
+.dark-mode .read-more{color: #7b8fff;}
+.dark-mode .read-more:hover{color: #fff;}
+
+.dark-mode .blog-content p{color: #c5c7d0;}
+.dark-mode .blog-content h2{color: #fff;}
+.dark-mode .blog-content h3{color: #fff;}
+.dark-mode .blog-content li{color: #c5c7d0;}
+.dark-mode .blog-content a{color: #7b8fff;}
+.dark-mode .blog-content a:hover{color: #fff;}
+.dark-mode .blog-content blockquote{background: #0d1628; border-left-color: #7b8fff;}
+.dark-mode .blog-content code{background: #1e293b; color: #e2e8f0;}
+.dark-mode .blog-content pre{background: #1e293b;}
+.dark-mode .blog-back-link{border-top-color: #353535;}
+.dark-mode .blog-back-link a{color: #7b8fff;}
+.dark-mode .blog-back-link a:hover{color: #fff;}
+
 .dark-mode .footerarea{background: #000;}
 .dark-mode .footemenu ul li a{color: #fff;}
 .dark-mode .footemenu2 ul li a{color: #fff;}
