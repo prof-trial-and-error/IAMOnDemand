@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+    {% include head.html %}
+    <link href="{{ '/assets/css/wiki.css' | relative_url }}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+    <div class="header_area wiki-header">
+        {% include header.html %}
+    </div>
+
+    <div class="wiki-container">
+        <aside class="wiki-sidebar" id="wiki-sidebar">
+            <button class="wiki-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon"></span>
+            </button>
+            <div class="wiki-sidebar-content">
+                {% include wiki_sidebar.html %}
+            </div>
+        </aside>
+
+        <main class="wiki-main">
+            <!-- Breadcrumb navigation -->
+            <nav class="wiki-breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/wiki/' | relative_url }}">Documentation</a></li>
+                    {% if page.category %}
+                    <li><a href="{{ '/wiki/' | append: page.category | append: '/' | relative_url }}">{{ page.category | replace: '-', ' ' | capitalize }}</a></li>
+                    {% endif %}
+                    <li aria-current="page">{{ page.title }}</li>
+                </ol>
+            </nav>
+
+            <article class="wiki-content">
+                <header class="wiki-header-content">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.description %}
+                    <p class="wiki-description">{{ page.description }}</p>
+                    {% endif %}
+                </header>
+
+                {% if page.toc != false %}
+                <nav class="wiki-toc" id="wiki-toc">
+                    <h2>On this page</h2>
+                    {% include toc.html html=content %}
+                </nav>
+                {% endif %}
+
+                <div class="wiki-body">
+                    {{ content }}
+                </div>
+
+                <!-- Previous/Next navigation -->
+                {% assign wiki_pages = site.wiki | where_exp: "item", "item.url != '/wiki/'" | sort: "order" %}
+                {% assign current_index = nil %}
+                {% for wiki_page in wiki_pages %}
+                    {% if wiki_page.url == page.url %}
+                        {% assign current_index = forloop.index0 %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if current_index != nil %}
+                <nav class="wiki-nav-links">
+                    {% assign prev_index = current_index | minus: 1 %}
+                    {% assign next_index = current_index | plus: 1 %}
+
+                    {% if prev_index >= 0 %}
+                    {% assign prev_page = wiki_pages[prev_index] %}
+                    <a href="{{ prev_page.url | relative_url }}" class="wiki-nav-prev">
+                        <span class="wiki-nav-label">&larr; Previous</span>
+                        <span class="wiki-nav-title">{{ prev_page.title }}</span>
+                    </a>
+                    {% else %}
+                    <span class="wiki-nav-placeholder"></span>
+                    {% endif %}
+
+                    {% if next_index < wiki_pages.size %}
+                    {% assign next_page = wiki_pages[next_index] %}
+                    <a href="{{ next_page.url | relative_url }}" class="wiki-nav-next">
+                        <span class="wiki-nav-label">Next &rarr;</span>
+                        <span class="wiki-nav-title">{{ next_page.title }}</span>
+                    </a>
+                    {% endif %}
+                </nav>
+                {% endif %}
+
+                <!-- Edit on GitHub -->
+                {% if site.github_repo %}
+                <div class="wiki-edit">
+                    <a href="{{ site.github_repo }}/edit/main/{{ page.path }}" target="_blank" rel="noopener">
+                        <i class="fa fa-pencil"></i> Edit this page on GitHub
+                    </a>
+                </div>
+                {% endif %}
+            </article>
+        </main>
+    </div>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+
+    <script>
+    // Sidebar toggle for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('wiki-sidebar');
+
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('is-open');
+                document.body.classList.toggle('sidebar-open');
+            });
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth < 992 &&
+                sidebar.classList.contains('is-open') &&
+                !sidebar.contains(e.target)) {
+                sidebar.classList.remove('is-open');
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+
+        // Highlight current section in TOC on scroll
+        const toc = document.getElementById('wiki-toc');
+        if (toc) {
+            const headings = document.querySelectorAll('.wiki-body h2, .wiki-body h3');
+            const tocLinks = toc.querySelectorAll('a');
+
+            function highlightTocOnScroll() {
+                let current = '';
+                headings.forEach(function(heading) {
+                    const rect = heading.getBoundingClientRect();
+                    if (rect.top <= 100) {
+                        current = heading.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(function(link) {
+                    link.classList.remove('is-active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('is-active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightTocOnScroll);
+            highlightTocOnScroll();
+        }
+
+        // Collapsible sidebar sections
+        const sidebarSections = document.querySelectorAll('.wiki-nav-section-title');
+        sidebarSections.forEach(function(section) {
+            section.addEventListener('click', function() {
+                this.parentElement.classList.toggle('is-collapsed');
+            });
+        });
+    });
+    </script>
+</body>
+</html>
