@@ -1,0 +1,669 @@
+# =============================================================================
+# PRICING PAGE DATA FOR JEKYLL
+# =============================================================================
+# File: _data/pricing.yml
+# Purpose: Complete pricing page data for a Keycloak SaaS hosting service
+# Usage: Access in templates via {{ site.data.pricing.* }}
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# PAGE METADATA
+# -----------------------------------------------------------------------------
+page:
+  title: "Simple, Transparent Pricing"
+  subtitle: "Unlimited users on every plan. No per-user fees, ever."
+  description: "Choose the plan that fits your needs. All plans include unlimited users, automatic updates, and EU hosting."
+  
+  # Badge/highlight text shown above title
+  badge: "🚀 7-Day Free Trial – No Credit Card Required"
+  
+  # Toggle for annual/monthly pricing display
+  billing_toggle:
+    monthly_label: "Monthly"
+    annual_label: "Annual"
+    annual_discount_text: "Save 20%"
+    default: "annual"  # which tab is active by default
+
+# -----------------------------------------------------------------------------
+# PRICING TIERS
+# -----------------------------------------------------------------------------
+tiers:
+  # -------------------------
+  # TIER 1: STARTER
+  # -------------------------
+  - id: "starter"
+    name: "Starter"
+    description: "Perfect for side projects, MVPs, and small teams getting started."
+    
+    # Pricing
+    price_monthly: 29
+    price_annual: 279          # Total annual price (not per month)
+    price_annual_monthly: 23   # Annual price shown as per-month equivalent
+    currency: "$"
+    billing_period: "month"
+    
+    # Visual styling
+    highlight: false           # Set true to add visual emphasis (border, shadow)
+    popular: false             # Shows "Most Popular" badge
+    recommended: false         # Shows "Recommended" badge
+    cta_text: "Start Free Trial"
+    cta_url: "/signup?plan=starter"
+    cta_style: "secondary"     # primary, secondary, outline
+    
+    # Key features shown in tier card (keep to 5-7 max)
+    key_features:
+      - "Unlimited users"
+      - "1 realm"
+      - "5 applications"
+      - "1 custom domain"
+      - "Daily backups"
+      - "99.5% uptime SLA"
+      - "Email support (48h response)"
+    
+    # What's NOT included (shown with strikethrough or X icon)
+    not_included:
+      - "Custom extensions"
+      - "Admin API access"
+      - "Log access"
+      - "Enterprise IdP connections"
+
+  # -------------------------
+  # TIER 2: PROFESSIONAL
+  # -------------------------
+  - id: "professional"
+    name: "Professional"
+    description: "For growing startups and SaaS companies ready to scale."
+    
+    # Pricing
+    price_monthly: 99
+    price_annual: 950
+    price_annual_monthly: 79
+    currency: "$"
+    billing_period: "month"
+    
+    # Visual styling
+    highlight: true
+    popular: true
+    recommended: false
+    cta_text: "Start Free Trial"
+    cta_url: "/signup?plan=professional"
+    cta_style: "primary"
+    
+    # Key features shown in tier card
+    key_features:
+      - "Unlimited users"
+      - "5 realms"
+      - "25 applications"
+      - "3 custom domains"
+      - "Dedicated cluster"
+      - "99.9% uptime SLA"
+      - "Priority support (12h response)"
+    
+    not_included:
+      - "Multi-region failover"
+      - "Custom extension development"
+      - "SIEM integration"
+
+  # -------------------------
+  # TIER 3: BUSINESS
+  # -------------------------
+  - id: "business"
+    name: "Business"
+    description: "For established companies with advanced security and compliance needs."
+    
+    # Pricing
+    price_monthly: 299
+    price_annual: 2870
+    price_annual_monthly: 239
+    currency: "$"
+    billing_period: "month"
+    
+    # Visual styling
+    highlight: false
+    popular: false
+    recommended: false
+    cta_text: "Start Free Trial"
+    cta_url: "/signup?plan=business"
+    cta_style: "secondary"
+    
+    # Key features shown in tier card
+    key_features:
+      - "Unlimited users"
+      - "Unlimited realms"
+      - "Unlimited applications"
+      - "10 custom domains"
+      - "HA cluster with failover"
+      - "99.95% uptime SLA"
+      - "Dedicated Slack + 24/7 critical"
+    
+    not_included:
+      - "Private cloud deployment"
+      - "Custom SLA above 99.95%"
+      - "Dedicated account manager"
+
+  # -------------------------
+  # TIER 4: ENTERPRISE
+  # -------------------------
+  - id: "enterprise"
+    name: "Enterprise"
+    description: "Custom solutions for large organizations with specific requirements."
+    
+    # Pricing - null values indicate "Contact Sales"
+    price_monthly: null
+    price_annual: null
+    price_annual_monthly: null
+    currency: "$"
+    billing_period: "month"
+    price_label: "Custom"      # Displayed instead of price
+    
+    # Visual styling
+    highlight: false
+    popular: false
+    recommended: false
+    cta_text: "Contact Sales"
+    cta_url: "/contact?inquiry=enterprise"
+    cta_style: "outline"
+    
+    # Key features shown in tier card
+    key_features:
+      - "Everything in Business, plus:"
+      - "Private cloud or on-premise"
+      - "Multi-region active-active"
+      - "Custom SLA up to 99.99%"
+      - "24/7 phone support"
+      - "Dedicated account manager"
+      - "Custom contract terms"
+    
+    not_included: []  # Enterprise includes everything
+
+# -----------------------------------------------------------------------------
+# FEATURE COMPARISON TABLE
+# -----------------------------------------------------------------------------
+# Categories and features for the detailed comparison table
+# Values can be: true, false, string, or null (for N/A)
+
+feature_categories:
+  # -------------------------
+  # CORE
+  # -------------------------
+  - id: "core"
+    name: "Core"
+    icon: "layers"  # Corresponds to icon library (e.g., Feather, Heroicons)
+    features:
+      - id: "users"
+        name: "Users"
+        tooltip: "Total number of users you can manage"
+        starter: "Unlimited"
+        professional: "Unlimited"
+        business: "Unlimited"
+        enterprise: "Unlimited"
+        
+      - id: "realms"
+        name: "Realms"
+        tooltip: "Separate authentication domains for different applications or tenants"
+        starter: "1"
+        professional: "5"
+        business: "Unlimited"
+        enterprise: "Unlimited"
+        
+      - id: "applications"
+        name: "Applications (Clients)"
+        tooltip: "Number of OIDC/SAML applications you can connect"
+        starter: "5"
+        professional: "25"
+        business: "Unlimited"
+        enterprise: "Unlimited"
+        
+      - id: "custom_domains"
+        name: "Custom Domains"
+        tooltip: "Use your own domain for login pages (e.g., login.yourcompany.com)"
+        starter: "1"
+        professional: "3"
+        business: "10"
+        enterprise: "Unlimited"
+
+  # -------------------------
+  # INFRASTRUCTURE
+  # -------------------------
+  - id: "infrastructure"
+    name: "Infrastructure"
+    icon: "server"
+    features:
+      - id: "cluster_type"
+        name: "Infrastructure Type"
+        tooltip: "Shared uses multi-tenant resources; Dedicated provides isolated compute"
+        starter: "Shared"
+        professional: "Dedicated"
+        business: "HA Cluster"
+        enterprise: "Custom"
+        
+      - id: "regions"
+        name: "Available Regions"
+        tooltip: "Geographic locations where your Keycloak instance can be deployed"
+        starter: "1 (EU)"
+        professional: "3 (EU, US, APAC)"
+        business: "All regions"
+        enterprise: "All + Custom"
+        
+      - id: "sla"
+        name: "Uptime SLA"
+        tooltip: "Guaranteed availability with service credits if not met"
+        starter: "99.5%"
+        professional: "99.9%"
+        business: "99.95%"
+        enterprise: "Up to 99.99%"
+        
+      - id: "backup_frequency"
+        name: "Backup Frequency"
+        tooltip: "How often your data is automatically backed up"
+        starter: "Daily"
+        professional: "Hourly"
+        business: "15 minutes"
+        enterprise: "Custom"
+        
+      - id: "backup_retention"
+        name: "Backup Retention"
+        tooltip: "How long backups are kept and available for restore"
+        starter: "7 days"
+        professional: "30 days"
+        business: "90 days"
+        enterprise: "Custom"
+
+  # -------------------------
+  # AUTHENTICATION
+  # -------------------------
+  - id: "authentication"
+    name: "Authentication"
+    icon: "shield"
+    features:
+      - id: "social_login"
+        name: "Social Login"
+        tooltip: "Allow users to sign in with Google, GitHub, Facebook, etc."
+        starter: true
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "mfa_email_totp"
+        name: "MFA (Email & TOTP)"
+        tooltip: "Two-factor authentication via email codes or authenticator apps"
+        starter: true
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "mfa_sms"
+        name: "MFA (SMS)"
+        tooltip: "Two-factor authentication via SMS text messages"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "passkeys"
+        name: "Passkeys / WebAuthn"
+        tooltip: "Passwordless authentication using biometrics or security keys"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "ldap_ad"
+        name: "LDAP / Active Directory"
+        tooltip: "Connect to existing user directories for federation"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "external_idp"
+        name: "External IdP Brokering"
+        tooltip: "Connect to Okta, Azure AD, or other identity providers"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+
+  # -------------------------
+  # CUSTOMIZATION
+  # -------------------------
+  - id: "customization"
+    name: "Customization"
+    icon: "palette"
+    features:
+      - id: "basic_branding"
+        name: "Basic Branding"
+        tooltip: "Customize logo, colors, and basic styling"
+        starter: true
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "remove_branding"
+        name: "Remove 'Powered by' Badge"
+        tooltip: "Remove our branding from your login pages"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "custom_themes"
+        name: "Custom Theme Upload"
+        tooltip: "Upload fully custom FreeMarker themes"
+        starter: false
+        professional: "1 theme"
+        business: "Unlimited"
+        enterprise: "Unlimited"
+        
+      - id: "custom_extensions"
+        name: "Custom Extensions (SPIs)"
+        tooltip: "Upload custom Java extensions for advanced functionality"
+        starter: false
+        professional: "1 SPI"
+        business: "5 SPIs"
+        enterprise: "Unlimited"
+
+  # -------------------------
+  # DEVELOPER TOOLS
+  # -------------------------
+  - id: "developer"
+    name: "Developer Tools"
+    icon: "code"
+    features:
+      - id: "admin_api"
+        name: "Admin API Access"
+        tooltip: "Programmatic access to manage users, roles, and configuration"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "user_export"
+        name: "User Export"
+        tooltip: "Export your users and data at any time"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "user_import"
+        name: "Bulk User Import"
+        tooltip: "Import users from CSV or other Keycloak instances"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+        
+      - id: "webhooks"
+        name: "Webhooks"
+        tooltip: "Receive real-time notifications for authentication events"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+        
+      - id: "terraform"
+        name: "Terraform Provider"
+        tooltip: "Manage Keycloak configuration as code"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+
+  # -------------------------
+  # MONITORING & LOGS
+  # -------------------------
+  - id: "monitoring"
+    name: "Monitoring & Logs"
+    icon: "activity"
+    features:
+      - id: "log_retention"
+        name: "Log Retention"
+        tooltip: "How long authentication logs are stored and searchable"
+        starter: "—"
+        professional: "7 days"
+        business: "30 days"
+        enterprise: "90+ days"
+        
+      - id: "user_events"
+        name: "User Event Access"
+        tooltip: "View login attempts, password changes, and user activity"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "admin_events"
+        name: "Admin Event Access"
+        tooltip: "View configuration changes and administrative actions"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+        
+      - id: "siem_export"
+        name: "SIEM Integration"
+        tooltip: "Export logs to Splunk, Datadog, or other security tools"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+        
+      - id: "custom_alerts"
+        name: "Custom Alerts"
+        tooltip: "Set up notifications for specific events or thresholds"
+        starter: false
+        professional: false
+        business: false
+        enterprise: true
+
+  # -------------------------
+  # SUPPORT
+  # -------------------------
+  - id: "support"
+    name: "Support"
+    icon: "headphones"
+    features:
+      - id: "support_channels"
+        name: "Support Channels"
+        tooltip: "How you can reach our support team"
+        starter: "Email"
+        professional: "Email + Chat"
+        business: "Slack + Phone"
+        enterprise: "Dedicated + Phone"
+        
+      - id: "response_time"
+        name: "Response Time"
+        tooltip: "Maximum time for initial response to support requests"
+        starter: "48 hours"
+        professional: "12 hours"
+        business: "4 hours"
+        enterprise: "30 minutes"
+        
+      - id: "support_hours"
+        name: "Support Hours"
+        tooltip: "When our support team is available"
+        starter: "Business hours"
+        professional: "Business hours"
+        business: "Extended + 24/7 critical"
+        enterprise: "24/7"
+        
+      - id: "dedicated_csm"
+        name: "Dedicated Success Manager"
+        tooltip: "A named contact who knows your account and helps optimize usage"
+        starter: false
+        professional: false
+        business: false
+        enterprise: true
+        
+      - id: "architecture_review"
+        name: "Architecture Review"
+        tooltip: "Expert review of your authentication architecture"
+        starter: false
+        professional: false
+        business: "Quarterly"
+        enterprise: "Monthly"
+
+  # -------------------------
+  # COMPLIANCE
+  # -------------------------
+  - id: "compliance"
+    name: "Compliance"
+    icon: "check-circle"
+    features:
+      - id: "gdpr"
+        name: "GDPR Compliant"
+        tooltip: "Data processing compliant with EU regulations"
+        starter: true
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "eu_hosting"
+        name: "EU Data Hosting"
+        tooltip: "Data stored exclusively in European Union data centers"
+        starter: true
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "soc2"
+        name: "SOC 2 Type II Report"
+        tooltip: "Access to our SOC 2 compliance report"
+        starter: false
+        professional: true
+        business: true
+        enterprise: true
+        
+      - id: "iso27001"
+        name: "ISO 27001"
+        tooltip: "Information security management certification"
+        starter: false
+        professional: false
+        business: true
+        enterprise: true
+        
+      - id: "hipaa"
+        name: "HIPAA Ready"
+        tooltip: "BAA available for healthcare data"
+        starter: false
+        professional: false
+        business: false
+        enterprise: true
+        
+      - id: "dpa"
+        name: "Custom DPA"
+        tooltip: "Custom Data Processing Agreement for your requirements"
+        starter: false
+        professional: false
+        business: "Standard"
+        enterprise: "Custom"
+
+# -----------------------------------------------------------------------------
+# FAQ SECTION
+# -----------------------------------------------------------------------------
+faq:
+  title: "Frequently Asked Questions"
+  subtitle: "Can't find what you're looking for? Contact our team."
+  
+  items:
+    - question: "Do you charge per user?"
+      answer: "No! Unlike most identity providers, we offer unlimited users on all paid plans. You pay a fixed monthly price regardless of how many users you have."
+      
+    - question: "Is there a free trial?"
+      answer: "Yes! All plans come with a 7-day free trial with full access to features. No credit card required to start."
+      
+    - question: "Can I change plans later?"
+      answer: "Absolutely. You can upgrade or downgrade at any time. Changes take effect immediately and we'll prorate the difference."
+      
+    - question: "What happens when my trial ends?"
+      answer: "You'll have a 3-day grace period to choose a plan. We'll never delete your data without warning. If you don't subscribe, your instance will be suspended (not deleted) and can be reactivated anytime."
+      
+    - question: "Can I migrate from self-hosted Keycloak?"
+      answer: "Yes! We provide free migration assistance on all plans. Most migrations complete within hours with minimal downtime."
+      
+    - question: "Where is my data stored?"
+      answer: "By default, all data is stored in EU data centers (Germany). Professional and higher plans can choose from US and APAC regions as well."
+      
+    - question: "Do you offer discounts for startups or non-profits?"
+      answer: "Yes! We offer 30% off for registered non-profits and 50% off for early-stage startups. Contact us to apply."
+      
+    - question: "What payment methods do you accept?"
+      answer: "We accept all major credit cards via Stripe. Enterprise customers can also pay by invoice with NET 30 terms."
+
+# -----------------------------------------------------------------------------
+# SOCIAL PROOF / TRUST ELEMENTS
+# -----------------------------------------------------------------------------
+trust:
+  # Logos of companies using the service
+  customer_logos:
+    - name: "TechCorp"
+      logo: "/assets/images/logos/techcorp.svg"
+    - name: "StartupXYZ"
+      logo: "/assets/images/logos/startupxyz.svg"
+    # Add more as needed
+  
+  # Stats to display
+  stats:
+    - value: "10,000+"
+      label: "Users managed"
+    - value: "99.99%"
+      label: "Actual uptime"
+    - value: "< 2h"
+      label: "Avg. response time"
+    - value: "50+"
+      label: "Countries served"
+  
+  # Trust badges
+  badges:
+    - name: "SOC 2 Type II"
+      image: "/assets/images/badges/soc2.svg"
+    - name: "GDPR Compliant"
+      image: "/assets/images/badges/gdpr.svg"
+    - name: "ISO 27001"
+      image: "/assets/images/badges/iso27001.svg"
+
+# -----------------------------------------------------------------------------
+# CTA SECTION (Bottom of page)
+# -----------------------------------------------------------------------------
+cta:
+  title: "Ready to secure your applications?"
+  subtitle: "Start your free trial today. No credit card required."
+  primary_button:
+    text: "Start Free Trial"
+    url: "/signup"
+  secondary_button:
+    text: "Talk to Sales"
+    url: "/contact"
+
+# -----------------------------------------------------------------------------
+# ADD-ONS (Optional section)
+# -----------------------------------------------------------------------------
+addons:
+  title: "Optional Add-Ons"
+  subtitle: "Extend your plan with additional capabilities"
+  
+  items:
+    - name: "Additional Custom Domain"
+      price: 5
+      period: "month"
+      description: "Add more custom domains to your plan"
+      available_tiers: ["starter", "professional", "business"]
+      
+    - name: "SMS OTP Bundle"
+      price: 29
+      period: "month"
+      description: "10,000 SMS messages per month for MFA"
+      available_tiers: ["starter"]
+      
+    - name: "Extended Log Retention"
+      price: 29
+      period: "month"
+      description: "Add 30 days to your log retention"
+      available_tiers: ["professional", "business"]
+      
+    - name: "Priority Migration"
+      price: 499
+      period: "one-time"
+      description: "White-glove migration service with dedicated engineer"
+      available_tiers: ["starter", "professional", "business"]
