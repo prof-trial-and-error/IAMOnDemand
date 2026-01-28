@@ -1,0 +1,374 @@
+---
+layout: default
+title: Pricing
+description: Simple, transparent pricing for managed Keycloak hosting. Unlimited users on every plan. No per-user fees, ever.
+permalink: /pricing
+---
+
+{% assign pricing = site.data.pricing %}
+
+<div class="header_area page-header">
+    {% include header.html %}
+    <div class="slider_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pricing-badge">{{ pricing.page.badge }}</div>
+                    <h1>{{ pricing.page.title }}</h1>
+                    <p>{{ pricing.page.subtitle }}</p>
+
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle">
+                        <span class="billing-label" data-billing="monthly">{{ pricing.page.billing_toggle.monthly_label }}</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="billing-toggle" {% if pricing.page.billing_toggle.default == 'annual' %}checked{% endif %}>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="billing-label" data-billing="annual">
+                            {{ pricing.page.billing_toggle.annual_label }}
+                            <span class="discount-badge">{{ pricing.page.billing_toggle.annual_discount_text }}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pricing Tiers Section -->
+<div class="pricing-tiers-section">
+    <div class="container">
+        <div class="row pricing-grid">
+            {% for tier in pricing.tiers %}
+            <div class="col-lg-3 col-md-6">
+                <div class="pricing-card {% if tier.popular %}popular{% endif %} {% if tier.highlight %}highlight{% endif %}">
+                    {% if tier.popular %}
+                    <div class="popular-badge">Most Popular</div>
+                    {% endif %}
+
+                    <div class="pricing-card-header">
+                        <h3 class="tier-name">{{ tier.name }}</h3>
+                        <p class="tier-description">{{ tier.description }}</p>
+                    </div>
+
+                    <div class="pricing-card-price">
+                        {% if tier.price_monthly %}
+                        <div class="price-display">
+                            <span class="currency">{{ tier.currency }}</span>
+                            <span class="price-monthly">{{ tier.price_monthly }}</span>
+                            <span class="price-annual" style="display: none;">{{ tier.price_annual_monthly }}</span>
+                            <span class="period">/{{ tier.billing_period }}</span>
+                        </div>
+                        <p class="billing-info">
+                            <span class="monthly-text">Billed monthly</span>
+                            <span class="annual-text" style="display: none;">Billed annually ({{ tier.currency }}{{ tier.price_annual }}/year)</span>
+                        </p>
+                        {% else %}
+                        <div class="price-display custom-price">
+                            <span class="price-label">{{ tier.price_label }}</span>
+                        </div>
+                        <p class="billing-info">Tailored to your needs</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="pricing-card-cta">
+                        <a href="{{ tier.cta_url | relative_url }}" class="pricing-btn {% if tier.cta_style == 'primary' %}btn-primary{% elsif tier.cta_style == 'outline' %}btn-outline{% else %}btn-secondary{% endif %}">
+                            {{ tier.cta_text }}
+                        </a>
+                    </div>
+
+                    <div class="pricing-card-features">
+                        <ul class="feature-list">
+                            {% for feature in tier.key_features %}
+                            <li class="feature-included">
+                                <svg class="feature-icon check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                {{ feature }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                        {% if tier.not_included.size > 0 %}
+                        <ul class="feature-list not-included">
+                            {% for feature in tier.not_included %}
+                            <li class="feature-excluded">
+                                <svg class="feature-icon x" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                                {{ feature }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Feature Comparison Section -->
+<div class="feature-comparison-section">
+    <div class="container">
+        <div class="heading">
+            <div class="w-h4">
+                <h4><img src="{{ '/assets/images/textborder.png' | relative_url }}" alt=""> Compare Plans <img src="{{ '/assets/images/textborder2.png' | relative_url }}" alt=""></h4>
+            </div>
+            <div class="n-h4">
+                <h4><img src="{{ '/assets/images/wtextborder.png' | relative_url }}" alt=""> Compare Plans <img src="{{ '/assets/images/wtextborder2.png' | relative_url }}" alt=""></h4>
+            </div>
+            <h2>Detailed Feature <span>Comparison</span></h2>
+        </div>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="feature-column">Feature</th>
+                        {% for tier in pricing.tiers %}
+                        <th class="tier-column {% if tier.popular %}popular{% endif %}">{{ tier.name }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in pricing.feature_categories %}
+                    <tr class="category-header" data-category="{{ category.id }}">
+                        <td colspan="5">
+                            <button class="category-toggle" aria-expanded="true">
+                                <span class="category-name">{{ category.name }}</span>
+                                <svg class="toggle-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    {% for feature in category.features %}
+                    <tr class="feature-row" data-category="{{ category.id }}">
+                        <td class="feature-name">
+                            {{ feature.name }}
+                            {% if feature.tooltip %}
+                            <span class="tooltip-trigger" data-tooltip="{{ feature.tooltip }}">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                            {% endif %}
+                        </td>
+                        <td class="feature-value">
+                            {% if feature.starter == true %}
+                            <svg class="value-icon check" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            {% elsif feature.starter == false %}
+                            <span class="value-dash">—</span>
+                            {% else %}
+                            <span class="value-text">{{ feature.starter }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="feature-value popular">
+                            {% if feature.professional == true %}
+                            <svg class="value-icon check" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            {% elsif feature.professional == false %}
+                            <span class="value-dash">—</span>
+                            {% else %}
+                            <span class="value-text">{{ feature.professional }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="feature-value">
+                            {% if feature.business == true %}
+                            <svg class="value-icon check" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            {% elsif feature.business == false %}
+                            <span class="value-dash">—</span>
+                            {% else %}
+                            <span class="value-text">{{ feature.business }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="feature-value">
+                            {% if feature.enterprise == true %}
+                            <svg class="value-icon check" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            {% elsif feature.enterprise == false %}
+                            <span class="value-dash">—</span>
+                            {% else %}
+                            <span class="value-text">{{ feature.enterprise }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Trust Section -->
+<div class="trust-section">
+    <div class="container">
+        <div class="trust-stats">
+            {% for stat in pricing.trust.stats %}
+            <div class="stat-item">
+                <div class="stat-value">{{ stat.value }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-section">
+    <div class="container">
+        <div class="heading">
+            <div class="w-h4">
+                <h4><img src="{{ '/assets/images/textborder.png' | relative_url }}" alt=""> {{ pricing.faq.title }} <img src="{{ '/assets/images/textborder2.png' | relative_url }}" alt=""></h4>
+            </div>
+            <div class="n-h4">
+                <h4><img src="{{ '/assets/images/wtextborder.png' | relative_url }}" alt=""> {{ pricing.faq.title }} <img src="{{ '/assets/images/wtextborder2.png' | relative_url }}" alt=""></h4>
+            </div>
+            <h2>Common <span>Questions</span></h2>
+            <p class="faq-subtitle">{{ pricing.faq.subtitle }}</p>
+        </div>
+
+        <div class="faq-list">
+            {% for item in pricing.faq.items %}
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>{{ item.question }}</span>
+                    <svg class="faq-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>{{ item.answer }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="pricing-cta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>{{ pricing.cta.title }}</h2>
+                <p>{{ pricing.cta.subtitle }}</p>
+                <div class="cta-buttons">
+                    <a href="{{ pricing.cta.primary_button.url | relative_url }}" class="getbtn">{{ pricing.cta.primary_button.text }}</a>
+                    <a href="{{ pricing.cta.secondary_button.url | relative_url }}" class="getbtn2">{{ pricing.cta.secondary_button.text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Billing Toggle
+    const billingToggle = document.getElementById('billing-toggle');
+    const monthlyPrices = document.querySelectorAll('.price-monthly');
+    const annualPrices = document.querySelectorAll('.price-annual');
+    const monthlyTexts = document.querySelectorAll('.monthly-text');
+    const annualTexts = document.querySelectorAll('.annual-text');
+    const billingLabels = document.querySelectorAll('.billing-label');
+
+    function updateBillingDisplay() {
+        const isAnnual = billingToggle.checked;
+
+        monthlyPrices.forEach(el => el.style.display = isAnnual ? 'none' : 'inline');
+        annualPrices.forEach(el => el.style.display = isAnnual ? 'inline' : 'none');
+        monthlyTexts.forEach(el => el.style.display = isAnnual ? 'none' : 'inline');
+        annualTexts.forEach(el => el.style.display = isAnnual ? 'inline' : 'none');
+
+        billingLabels.forEach(label => {
+            if (label.dataset.billing === 'annual') {
+                label.classList.toggle('active', isAnnual);
+            } else {
+                label.classList.toggle('active', !isAnnual);
+            }
+        });
+
+        // Save preference
+        localStorage.setItem('billing-preference', isAnnual ? 'annual' : 'monthly');
+    }
+
+    // Load saved preference
+    const savedPreference = localStorage.getItem('billing-preference');
+    if (savedPreference) {
+        billingToggle.checked = savedPreference === 'annual';
+    }
+    updateBillingDisplay();
+
+    billingToggle.addEventListener('change', updateBillingDisplay);
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Close all other FAQs
+            faqQuestions.forEach(q => {
+                q.setAttribute('aria-expanded', 'false');
+                q.parentElement.classList.remove('active');
+            });
+
+            // Toggle current FAQ
+            if (!isExpanded) {
+                this.setAttribute('aria-expanded', 'true');
+                this.parentElement.classList.add('active');
+            }
+        });
+    });
+
+    // Category Toggle (Feature Comparison)
+    const categoryToggles = document.querySelectorAll('.category-toggle');
+
+    categoryToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const categoryRow = this.closest('.category-header');
+            const categoryId = categoryRow.dataset.category;
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            const featureRows = document.querySelectorAll(`.feature-row[data-category="${categoryId}"]`);
+
+            this.setAttribute('aria-expanded', !isExpanded);
+            categoryRow.classList.toggle('collapsed', isExpanded);
+
+            featureRows.forEach(row => {
+                row.style.display = isExpanded ? 'none' : '';
+            });
+        });
+    });
+
+    // Tooltip handling
+    const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+
+    tooltipTriggers.forEach(trigger => {
+        trigger.addEventListener('mouseenter', function(e) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = this.dataset.tooltip;
+            document.body.appendChild(tooltip);
+
+            const rect = this.getBoundingClientRect();
+            tooltip.style.top = (rect.top - tooltip.offsetHeight - 8 + window.scrollY) + 'px';
+            tooltip.style.left = (rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)) + 'px';
+        });
+
+        trigger.addEventListener('mouseleave', function() {
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+        });
+    });
+});
+</script>
