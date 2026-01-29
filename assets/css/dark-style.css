@@ -34,6 +34,7 @@
 
 
 .dark-mode .slider_area h1{color: #fff;}
+.dark-mode .slider_area .typed-cursor{color: #f57b2c;}
 .dark-mode .slider_area p{color: #fff;}
 
 .dark-mode .getbtn2{margin: 30px 10px 30px 10px;  padding: 0px 50px 0px 50px; background: transparent;  color: #fff; font-weight: 700;  border-radius: 6px; border: 1px solid #fff; line-height: 63px; font-size: 20px; font-family: "Sora", sans-serif; display: inline-block; }
