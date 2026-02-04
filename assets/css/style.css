@@ -141,9 +141,11 @@ body {
 
 .logo {
 	float: left;
-	padding: 0px 0 0 0;  display: flow-root;
+	padding: 0px 0 0 0;
+	display: flow-root;
+	max-width: 220px;
 }
-.logo img{width: 100%;}
+.logo img{width: 100%; height: auto;}
 
 .h_menu ul{margin: 5px 0 5px 0; padding: 0px; list-style: none;}
 .h_menu ul li{margin: 0px; padding: 0px 4px;}
@@ -179,7 +181,8 @@ body {
 }
 
 .navbar {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-white-100);
@@ -711,6 +714,12 @@ button:focus{outline: none !important;}
 	
 }
 @media only screen and (max-width: 768px) {
+  .navbar{padding: 10px 15px;}
+  .logo, .darklogo{max-width: 155px; float: none;}
+  .logo img, .darklogo img{width: 100%; height: auto;}
+  .flote-right{order: 2; margin-left: auto;}
+  .menu-block{order: 3;}
+
   .header_area{background: #fff;}
   .innerheader .h_menu ul li a{color: #fff;}
   .h_menu ul{margin-bottom: 20px;}
@@ -820,8 +829,9 @@ button:focus{outline: none !important;}
   .footemenu ul li{float: none; display: inline; padding: 0 8px;}
   .footemenu2 ul{text-align: center;}
   .footemenu2 ul li{float: none; display: inline; padding: 0 8px;}
-  .footerlogo{margin: -80px 0 0 0 !important;}
-  .footerarea{padding-top: 90px;}
+  .footerlogo{margin: 20px 0 !important;}
+  .footerlogo img{width: 180px;}
+  .footerarea{padding-top: 40px;}
 
   .missonarea{padding: 50px 0;}
 
