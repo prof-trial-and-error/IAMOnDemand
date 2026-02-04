@@ -16,7 +16,8 @@
 .dark-mode .header{background: #000;}
 .dark-mode .menu-link{color: #fff;}
 
-.dark-mode .darklogo{display: block; padding: 0px 0 0 0; float: left;  display: flow-root;}
+.dark-mode .darklogo{display: block; padding: 0px 0 0 0; float: left; display: flow-root; max-width: 220px;}
+.dark-mode .darklogo img{width: 100%; height: auto;}
 .dark-mode .logo{display: none;}
 .darklogo{display: none;}
 
@@ -150,8 +151,8 @@
  .dark-mode .logintbtn { margin-left: 0px; float: left; padding: 10px 22px 10px 22px; margin: 15px 0 15px 0px; }
  .dark-mode .slider_area .getbtn2{width: 100%; margin: 0px;}
  
- .darklogo { float: left;  padding-top: 2px; }
- .darklogo img{width: 175px;}
+ .darklogo { float: none; padding-top: 2px; max-width: 155px; }
+ .darklogo img{width: 100%; height: auto;}
 
  .dark-mode .dark-logoarea{display: inline-block; margin-top: 0px;}
  .dark-mode .dark-logoarea .logoc{margin: 20px 15px;}

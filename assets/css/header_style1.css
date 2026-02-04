@@ -158,9 +158,11 @@
 	.h_menu ul li a{color: #fff;font-size: 18px; border-bottom: 1px solid #082144;  font-family: "Sora", sans-serif;  ;line-height: 40px; padding: 5px 20px;}
     
 	.logo {
-        float: left;  padding-top: 2px;
+        float: none;
+        padding-top: 2px;
+        max-width: 155px;
     }
-	.logo img{width: 155px;}
+	.logo img{width: 100%; height: auto;}
 	
 	.header_area .flote-right{width: auto;}
     .logintbtn {
