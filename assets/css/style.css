@@ -76,6 +76,34 @@
 }
 
 /* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-navy: #080f44;
+  --color-orange: #f57b2c;
+  --color-blue: #2f44df;
+  --color-light-bg: #f2f4ff;
+  --color-dark-bg: #03152e;
+  --color-text-gray: #3e3f44;
+  --color-text-muted: #6b7280;
+
+  /* Fonts */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Sora", sans-serif;
+
+  /* Spacing */
+  --section-padding: 150px 0;
+  --section-padding-mobile: 50px 0;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+}
+
+/* ==========================================================================
    CSS Reset
    ========================================================================== */
 
@@ -85,59 +113,18 @@ ol,ul{list-style:none;margin:0;padding:0;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
-/* start editing from here */
 a{text-decoration:none;}
-.txt-rt{text-align:right;}/* text align right */
-.txt-lt{text-align:left;}/* text align left */
-.txt-center{text-align:center;}/* text align center */
-.float-rt{float:right;}/* float right */
-.float-lt{float:left;}/* float left */
-.clear{clear:both;}/* clear float */
-.pos-relative{position:relative;}/* Position Relative */
-.pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+.clear{clear:both;}
 img{max-width:100%;}
-/*end reset*/
 body {
 	font-family: "Sora", sans-serif;
 	background:#ffffff;
 }
-.clear{clear: both;}
 .text-left{text-align: left !important;}
 
 .container{max-width: 1400px !important;}
 
-
-
-
-
 .header_area{width: 100%;  background:url(../images/bannerng.png) no-repeat top #fff;  background-size: 100%;  min-height: 898px; }
-.nav_wrapper {
-    max-width: 1400px; margin: 0 auto; display: flow-root;
-
-}
-
-
-.nav_wrapper.sticky {
-	position: fixed;
-	top: 0px;
-	height: 84px;
-}
-
-
-
-.innerheader{background: #fff;}
-.innerheader .h_menu ul li a{color: #252d68;}
-
-
-
-.top{width: 100%;  background: #0d2143;}
-.top h4{font-size: 16px; color: #fff; margin: 0px; font-weight: 400; text-align: center; padding: 9px 0; line-height: 28px; font-family: "Sora", sans-serif;}
-.top h4 a{color: #fff; text-decoration: underline;}
 
 .logo {
 	float: left;
@@ -146,24 +133,6 @@ body {
 	max-width: 220px;
 }
 .logo img{width: 100%; height: auto;}
-
-.h_menu ul{margin: 5px 0 5px 0; padding: 0px; list-style: none;}
-.h_menu ul li{margin: 0px; padding: 0px 4px;}
-.h_menu ul li a{color: #080f44; font-size: 18px; font-family: "Sora", sans-serif; }
-.logintbtn{margin: 10px 0 10px 20px; float: right; padding: 15px 38px 15px 38px; border: 1px solid #080f44;  color: #080f44;  font-family: "Sora", sans-serif; text-transform: uppercase; border-radius: 6px; line-height: 28px; font-size: 18px; font-weight: 700; display: block;}
-.logintbtn:hover{text-decoration: none; background: #080f44; color: #fff;}
-
-
-
-
-
-
-
-
-
-
-
-
 
 .header {
   position: fixed;
@@ -185,7 +154,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-white-100);
+  background-color: transparent;
 }
 
 .brand {
@@ -195,7 +164,7 @@ body {
   line-height: 1.5;
   letter-spacing: -1px;
   text-transform: uppercase;
-  color: var(--color-black-500);
+  color: #080f44;
 }
 
 .menu {
@@ -318,59 +287,11 @@ button:focus{outline: none !important;}
   column-gap: 2rem;
   text-align: center;
 }
-  top: 0.75rem;
-}
-.burger.is-active .burger-line:nth-child(1) {
-  top: 0.5rem;
-  transform: rotate(135deg);
-}
-.burger.is-active .burger-line:nth-child(2) {
-  top: 0.5rem;
-  transform: rotate(-135deg);
-}
-
-.wrapper-column {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  min-height: 90dvh;
-}
-.wrapper-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .flote-right{float: right;}
 
 .w-h4{display: inline-flex;}
 .n-h4{display: none;}
-
-
-
 
 .slider_area{width: 100%; padding: 200px 0 100px 0; position: relative; text-align: center;}
 .slider_area .shape{position: absolute; bottom: 0px; width: 100%;}
@@ -699,20 +620,6 @@ button:focus{outline: none !important;}
 
 
 
-
-
-
-@media only screen and (max-width: 1366px) {
-	 
-	
-}
-@media only screen and (max-width: 1280px) {
-	 
-}
-@media only screen and (max-width: 1024px) {
-	 
-	
-}
 @media only screen and (max-width: 768px) {
   .navbar{padding: 10px 15px;}
   .logo, .darklogo{max-width: 155px; float: none;}
@@ -721,10 +628,6 @@ button:focus{outline: none !important;}
   .menu-block{order: 3;}
 
   .header_area{background: #fff;}
-  .innerheader .h_menu ul li a{color: #fff;}
-  .h_menu ul{margin-bottom: 20px;}
-  .top h4 { font-size: 14px; text-align: center;}
-  .nav_wrapper {display: block;}
 
 
   .slider_area h1{font-size: 32px; text-align: center; margin: 0px; padding: 0px; line-height: 46px;}
@@ -850,21 +753,4 @@ button:focus{outline: none !important;}
   .offerarea ul{padding: 0px;}
   .offerarea .getbtn{width: 100%;}
 
-}
-
-
-@media only screen and (max-width: 640px) {
-	
-}
-	
-
-@media only screen and (max-width: 480px) {
-	
- 
-	
-}
-@media only screen and (max-width: 320px) {
-	
-	 
-	
 }

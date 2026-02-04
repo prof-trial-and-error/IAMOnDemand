@@ -1,23 +1,19 @@
+<!-- jQuery -->
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+
+<!-- Typed.js for hero animation -->
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script type="text/javascript" src="{{ '/assets/js/animation.js' | relative_url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/flexy-menu.js' | relative_url }}"></script>
-<script type="text/javascript">$(document).ready(function(){$(".flexy-menu").flexymenu({speed: 400,type: "horizontal",align: "right"});});</script>
-<script type="text/javascript" src="{{ '/assets/js/move-top.js' | relative_url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/easing.js' | relative_url }}"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-    $(".scroll").click(function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-    });
-});
-</script>
+
+<!-- Dark mode toggle -->
 <script>
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
 </script>
+
+<!-- Mobile menu -->
 <script>
 const navbarMenu = document.getElementById("menu");
 const burgerMenu = document.getElementById("burger");
