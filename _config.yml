@@ -1,12 +1,16 @@
 # Site settings
 title: IAM OnDemand
 description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Identity and Access Management with our fully managed, turnkey Keycloak on demand solutions.
-url: "" # Base hostname & protocol for your site (e.g., https://iamondemand.com)
+url: "https://iam-ondemand.com"
 baseurl: "" # Subpath of your site (e.g., /blog) - leave empty if hosted at root
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-sitemap
 
 # Exclude from processing
 exclude:
