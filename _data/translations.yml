@@ -6,89 +6,33 @@ en:
   nav_home: "Home"
   nav_about: "About"
   nav_blog: "Blog"
-  nav_docs: "Docs"
   nav_login: "Login"
-
-  # Wiki
-  wiki_title: "Documentation"
-  wiki_on_this_page: "On this page"
-  wiki_previous: "Previous"
-  wiki_next: "Next"
-  wiki_edit_github: "Edit this page on GitHub"
-  wiki_back_to_docs: "Back to Documentation"
-  wiki_getting_started: "Getting Started"
-  wiki_user_guide: "User Guide"
-  wiki_administration: "Administration"
-  wiki_integration: "Integration"
-  wiki_api_reference: "API Reference"
-  wiki_troubleshooting: "Troubleshooting"
-
-  # Wiki Landing
-  wiki_quick_start: "Quick Start"
-  wiki_quick_start_intro: "New to IAM OnDemand? Start here to get up and running quickly."
-  wiki_popular_topics: "Popular Topics"
-  wiki_popular_topics_intro: "Explore the most commonly used documentation."
-  wiki_browse_category: "Browse by Category"
-  wiki_browse_category_intro: "Explore all documentation organized by topic."
-  wiki_need_help: "Need Help?"
-  wiki_need_help_desc: "Can't find what you're looking for? Our support team is here to help."
-  wiki_contact_support: "Contact Support"
 
   # Footer
   footer_imprint: "Imprint"
   footer_privacy: "Privacy Policy"
   footer_terms: "Terms & Conditions"
-  footer_documentation: "Documentation"
   footer_copyright: "All rights reserved."
 
   # Common
   read_more: "Read more"
   back: "Back"
   search: "Search"
-  search_placeholder: "Search documentation..."
 
 de:
   # Navigation
   nav_home: "Startseite"
   nav_about: "Über uns"
   nav_blog: "Blog"
-  nav_docs: "Dokumentation"
   nav_login: "Anmelden"
-
-  # Wiki
-  wiki_title: "Dokumentation"
-  wiki_on_this_page: "Auf dieser Seite"
-  wiki_previous: "Zurück"
-  wiki_next: "Weiter"
-  wiki_edit_github: "Diese Seite auf GitHub bearbeiten"
-  wiki_back_to_docs: "Zurück zur Dokumentation"
-  wiki_getting_started: "Erste Schritte"
-  wiki_user_guide: "Benutzerhandbuch"
-  wiki_administration: "Administration"
-  wiki_integration: "Integration"
-  wiki_api_reference: "API-Referenz"
-  wiki_troubleshooting: "Fehlerbehebung"
-
-  # Wiki Landing
-  wiki_quick_start: "Schnellstart"
-  wiki_quick_start_intro: "Neu bei IAM OnDemand? Starten Sie hier, um schnell loszulegen."
-  wiki_popular_topics: "Beliebte Themen"
-  wiki_popular_topics_intro: "Erkunden Sie die am häufigsten verwendete Dokumentation."
-  wiki_browse_category: "Nach Kategorie durchsuchen"
-  wiki_browse_category_intro: "Erkunden Sie alle nach Themen geordnete Dokumentation."
-  wiki_need_help: "Brauchen Sie Hilfe?"
-  wiki_need_help_desc: "Können Sie nicht finden, was Sie suchen? Unser Support-Team ist für Sie da."
-  wiki_contact_support: "Support kontaktieren"
 
   # Footer
   footer_imprint: "Impressum"
   footer_privacy: "Datenschutz"
   footer_terms: "AGB"
-  footer_documentation: "Dokumentation"
   footer_copyright: "Alle Rechte vorbehalten."
 
   # Common
   read_more: "Mehr lesen"
   back: "Zurück"
   search: "Suchen"
-  search_placeholder: "Dokumentation durchsuchen..."
