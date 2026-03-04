@@ -13,6 +13,13 @@
 
 .dark-mode .header{background: #000;}
 .dark-mode .menu-link{color: #fff;}
+.dark-mode .nav-cta {
+  border-color: #fff;
+}
+.dark-mode .nav-cta:hover {
+  background: #fff;
+  color: #080f44;
+}
 
 .dark-mode .darklogo{display: flow-root; padding: 0; float: left; max-width: 220px;}
 .dark-mode .darklogo img{width: 100%; height: auto;}
@@ -34,6 +41,15 @@
 
 .dark-mode .getbtn2{margin: 30px 10px 30px 10px; padding: 0px 50px 0px 50px; background: transparent; color: #fff; font-weight: 700; border-radius: 6px; border: 1px solid #fff; line-height: 63px; font-size: 20px; font-family: "Sora", sans-serif; display: inline-block;}
 .dark-mode .getbtn2:hover{text-decoration: none; background: #fff; color: #080f44;}
+.dark-mode .hero-secondary-cta {
+  color: #c5c7d0;
+}
+.dark-mode .hero-secondary-cta a {
+  color: #7b8fff;
+}
+.dark-mode .funnel-cta a {
+  color: #7b8fff;
+}
 
 .dark-mode .dutharea{background: #000;}
 .dark-mode .dutharea h4{color: #fff;}
@@ -47,8 +63,9 @@
 .dark-mode .sturrgelarea{background: #000;}
 .dark-mode .logoarea{display: none;}
 
-.dark-mode .dark-logoarea{width: 100%; text-align: center; margin-top: 40px; display: inline-flex;}
+.dark-mode .dark-logoarea{width: 100%; text-align: center; margin-top: 40px; display: inline-flex; align-items: center; justify-content: center;}
 .dark-mode .dark-logoarea .logoc{margin: 0 60px;}
+.dark-mode .dark-logoarea .logo-invert img{filter: brightness(0) invert(1);}
 
 .dark-mode .sturrgelarea h4{color: #fff;}
 .dark-mode .sturrgelarea h2{color: #fff;}

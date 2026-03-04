@@ -192,6 +192,17 @@ body {
   color: #080f44; font-size: 18px; font-family: "Sora", sans-serif;
   transition: all 0.3s ease;
 }
+.nav-cta {
+  border: 1.5px solid #080f44;
+  border-radius: 6px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  background: #080f44;
+  color: #fff;
+  text-decoration: none;
+}
 .menu-block {
   display: flex;
   align-items: center;
@@ -312,7 +323,35 @@ button:focus{outline: none !important;}
 
 .getbtn2{margin: 30px 10px 30px 10px;  padding: 0px 50px 0px 50px; background: transparent;  color: #080f44; font-weight: 700;  border-radius: 6px; border: 1px solid #080f44; line-height: 63px; font-size: 20px; font-family: "Sora", sans-serif; display: inline-block; }
 .getbtn2:hover{text-decoration: none; background: #080f44; color: #fff;}
-
+.hero-secondary-cta {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  color: #080f44;
+  margin-top: -10px;
+  padding-bottom: 20px;
+}
+.hero-secondary-cta a {
+  color: #2f44df;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hero-secondary-cta a:hover {
+  text-decoration: underline;
+}
+.funnel-cta {
+  margin-top: 40px;
+  padding-bottom: 10px;
+}
+.funnel-cta a {
+  font-family: "Sora", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2f44df;
+  text-decoration: none;
+}
+.funnel-cta a:hover {
+  text-decoration: underline;
+}
 
 
 
@@ -375,7 +414,7 @@ button:focus{outline: none !important;}
 .sturrgelbox h3{font-size: 26px; line-height: 34px; font-family: "Sora", sans-serif; color: #080f44; font-weight: 600; margin: 0px; padding: 0px 0 8px 0;  }
 .sturrgelbox p{padding: 0px 0px 0px 0;}
 
-.logoarea{width: 100%; text-align: center; margin-top: 40px; display: inline-flex;}
+.logoarea{width: 100%; text-align: center; margin-top: 40px; display: inline-flex; align-items: center; justify-content: center;}
 .logoarea .logoc{margin: 0 60px; }
 
 
@@ -641,6 +680,11 @@ button:focus{outline: none !important;}
   .dashboardarea .dashboard {margin-top: -190px;}
   .slider_area .getbtn{width: 100%;}
   .slider_area .getbtn2{width: 100%; margin: 0px;}
+  .hero-secondary-cta {
+    font-size: 14px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+  }
   .dashboardarea { padding: 100px 0 50px 0;}
 
   .dashboardbottom ul{text-align: left; }
@@ -672,6 +716,12 @@ button:focus{outline: none !important;}
   .sturrgelbox p{text-align: center; padding-bottom: 10px;}
   .logoarea{display: inline-block; margin-top: 0px;}
   .logoarea .logoc{margin: 20px 15px;  }
+  .funnel-cta {
+    margin-top: 25px;
+  }
+  .funnel-cta a {
+    font-size: 15px;
+  }
 
   .pricearea{padding: 50px 0;}
   .pricearea h4{font-size: 13px; text-align: center;}
