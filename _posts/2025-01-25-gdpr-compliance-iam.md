@@ -78,4 +78,4 @@ Keycloak supports encryption for data at rest and in transit, meeting GDPR secur
 
 IAM OnDemand provides GDPR-ready Keycloak hosting with all the features you need for compliance. Our infrastructure is hosted in EU data centers, and we offer Data Processing Agreements (DPAs) for all customers.
 
-Contact us to learn how we can help you build a compliant identity management solution.
+[Contact us](/funnel/b/) to learn how we can help you build a compliant identity management solution.

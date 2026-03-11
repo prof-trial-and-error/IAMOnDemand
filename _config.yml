@@ -23,6 +23,7 @@ exclude:
   - README.md
   - plan.md
   - research.md
+  - funnel_plan.md
 
 # Default front matter
 defaults:

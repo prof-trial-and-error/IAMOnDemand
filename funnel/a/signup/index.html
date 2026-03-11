@@ -1,0 +1,40 @@
+---
+layout: funnel
+title: Start Free Trial
+funnel_id: a
+funnel_step: 4
+funnel_total: 5
+step_name: signup_form
+sitemap: false
+---
+
+<h2 class="funnel-question">Start your free trial</h2>
+<p class="funnel-subtitle">No credit card required. 7 days free on the <span class="funnel-tier-label">selected</span> plan.</p>
+
+<form class="funnel-form" data-action="FUNNEL_A_ENDPOINT" data-redirect="{{ '/funnel/a/thank-you/' | relative_url }}">
+    <div class="funnel-hidden-fields"></div>
+
+    <div class="funnel-form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="email">Work Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="company">Company Name <span class="optional-label">(optional)</span></label>
+        <input type="text" id="company" name="company">
+    </div>
+
+    <button type="submit" class="funnel-submit-btn" data-original-text="Start Free Trial">Start Free Trial</button>
+    <div class="funnel-form-error"></div>
+    <p class="funnel-form-note">By signing up you agree to our <a href="{{ '/terms-and-conditions' | relative_url }}">Terms</a> and <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>.</p>
+</form>

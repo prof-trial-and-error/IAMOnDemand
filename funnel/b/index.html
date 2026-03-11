@@ -1,0 +1,39 @@
+---
+layout: funnel
+title: Talk to Sales
+funnel_id: b
+funnel_step: 1
+funnel_total: 6
+step_name: q1_challenge
+sitemap: false
+---
+
+<h2 class="funnel-question">What's your primary IAM challenge?</h2>
+<p class="funnel-subtitle">This helps our team prepare for your consultation.</p>
+
+<div class="funnel-options">
+    <a href="{{ '/funnel/b/scale/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"challenge":"replacing"}'
+       data-value="replacing">
+        Replacing an existing IAM vendor
+    </a>
+    <a href="{{ '/funnel/b/scale/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"challenge":"migrating"}'
+       data-value="migrating">
+        Migrating from self-hosted Keycloak
+    </a>
+    <a href="{{ '/funnel/b/scale/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"challenge":"new-setup"}'
+       data-value="new-setup">
+        Setting up IAM for a new project
+    </a>
+    <a href="{{ '/funnel/b/scale/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"challenge":"compliance"}'
+       data-value="compliance">
+        Meeting compliance requirements
+    </a>
+</div>

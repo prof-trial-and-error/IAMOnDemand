@@ -4,5 +4,21 @@ permalink: /robots.txt
 ---
 User-agent: *
 Allow: /
+Disallow: /funnel/
+
+User-agent: GPTBot
+Disallow: /funnel/
+
+User-agent: ChatGPT-User
+Disallow: /funnel/
+
+User-agent: Google-Extended
+Disallow: /funnel/
+
+User-agent: CCBot
+Disallow: /funnel/
+
+User-agent: anthropic-ai
+Disallow: /funnel/
 
 Sitemap: {{ site.url }}/sitemap.xml

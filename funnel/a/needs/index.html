@@ -1,0 +1,60 @@
+---
+layout: funnel
+title: Your Needs
+funnel_id: a
+funnel_step: 2
+funnel_total: 5
+step_name: q2_needs
+sitemap: false
+---
+
+<h2 class="funnel-question">What do you need most right now?</h2>
+<p class="funnel-subtitle">We'll match you with the best plan.</p>
+
+<!-- Small lane: shown for builder / scaling -->
+<div class="funnel-lane" data-lane="small">
+    <div class="funnel-options">
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"starter","need":"basic"}'
+           data-value="basic">
+            Basic login &amp; SSO — keep it simple
+        </a>
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"professional","need":"advanced"}'
+           data-value="advanced">
+            Advanced auth (MFA, social login, LDAP)
+        </a>
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"professional","need":"full"}'
+           data-value="full">
+            All of the above + custom branding &amp; API
+        </a>
+    </div>
+</div>
+
+<!-- Large lane: shown for replacing / compliance -->
+<div class="funnel-lane" data-lane="large">
+    <div class="funnel-options">
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"professional","need":"dedicated"}'
+           data-value="dedicated">
+            Dedicated hosting with priority support
+        </a>
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"business","need":"enterprise-features"}'
+           data-value="enterprise-features">
+            HA cluster, compliance certs, 24/7 support
+        </a>
+        <a href="{{ '/funnel/a/result/' | relative_url }}"
+           class="funnel-option-btn"
+           data-params='{"tier":"enterprise","need":"custom"}'
+           data-value="custom">
+            Custom deployment, SLA, or contract terms
+        </a>
+    </div>
+</div>

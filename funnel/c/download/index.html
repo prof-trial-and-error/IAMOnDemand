@@ -1,0 +1,40 @@
+---
+layout: funnel
+title: Download the Guide
+funnel_id: c
+funnel_step: 3
+funnel_total: 4
+step_name: download_form
+sitemap: false
+---
+
+<h2 class="funnel-question">Get your free Keycloak guide</h2>
+<p class="funnel-subtitle">20 real-world use cases to maximize business potential with Keycloak.</p>
+
+<form class="funnel-form" data-action="https://script.google.com/macros/s/AKfycbyAViCTMCpsS9mgjhdDXeywI_R5tqBhrX0Z1o3tf9FU95eQ94gnsUrSX0ot2yTvljoc/exec" data-redirect="{{ '/funnel/c/thank-you/' | relative_url }}">
+    <div class="funnel-hidden-fields"></div>
+
+    <div class="funnel-form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="email">Work Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="funnel-form-group">
+        <label for="company">Company Name <span class="optional-label">(optional)</span></label>
+        <input type="text" id="company" name="company">
+    </div>
+
+    <button type="submit" class="funnel-submit-btn" data-original-text="Send Me the Guide">Send Me the Guide</button>
+    <div class="funnel-form-error"></div>
+    <p class="funnel-form-note">By submitting you agree to our <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>.</p>
+</form>

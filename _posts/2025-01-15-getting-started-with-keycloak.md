@@ -39,4 +39,4 @@ With IAM OnDemand, you get all the benefits of Keycloak without the operational 
 
 ## Next Steps
 
-Ready to get started? Sign up for IAM OnDemand today and have your Keycloak instance running in minutes. Our starter plan is perfect for development and testing, while our professional and business plans provide the scalability and support needed for production workloads.
+Ready to get started? [Sign up for IAM OnDemand today](/funnel/a/) and have your Keycloak instance running in minutes. Our starter plan is perfect for development and testing, while our professional and business plans provide the scalability and support needed for production workloads.

@@ -55,4 +55,4 @@ Keycloak makes enterprise SSO implementation straightforward. With support for O
 
 IAM OnDemand provides fully managed Keycloak hosting, making it even easier to get started with SSO. Our team handles the infrastructure and configuration, so you can focus on integrating your applications.
 
-Contact us today to learn how we can help streamline your enterprise authentication.
+[Contact us today](/funnel/b/) to learn how we can help streamline your enterprise authentication.

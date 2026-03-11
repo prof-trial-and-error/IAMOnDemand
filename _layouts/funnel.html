@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN8RHGEFSC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LN8RHGEFSC');
+    </script>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/fevaicon.png' | relative_url }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Funnel Styles -->
+    <link href="{{ '/assets/css/funnel.css' | relative_url }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Minimal header: logo only -->
+    <header class="funnel-header">
+        <div class="funnel-container">
+            <a href="{{ '/' | relative_url }}" class="funnel-logo-link">
+                <img src="{{ '/assets/images/logo_light_opt.svg' | relative_url }}" alt="IAM OnDemand" class="funnel-logo">
+            </a>
+        </div>
+    </header>
+
+    <!-- Progress indicator -->
+    <div class="funnel-progress">
+        <div class="funnel-container">
+            <span class="funnel-progress-text">Step {{ page.funnel_step }} of {{ page.funnel_total }}</span>
+            <div class="funnel-progress-bar">
+                <div class="funnel-progress-fill" style="width: {% assign pct = page.funnel_step | times: 100 | divided_by: page.funnel_total %}{{ pct }}%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <main class="funnel-content" data-funnel-id="{{ page.funnel_id }}" data-step-name="{{ page.step_name }}" data-step-number="{{ page.funnel_step }}">
+        <div class="funnel-container">
+            {{ content }}
+        </div>
+    </main>
+
+    <!-- Minimal footer -->
+    <footer class="funnel-footer">
+        <div class="funnel-container">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ '/assets/js/funnel.js' | relative_url }}"></script>
+</body>
+</html>

@@ -18,9 +18,9 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
                     </div>
                     <h1><span id="typed-text"></span></h1>
                     <p>Simplify Identity and Access Management with our fully managed, turnkey<br> Keycloak on demand solutions.</p>
-                    <a href="#download" class="getbtn">Download Free Guide</a>
+                    <a href="{{ '/funnel/c/' | relative_url }}" class="getbtn">Download Free Guide</a>
                     <div class="hero-secondary-cta">
-                        Already know what you need? <a href="https://calendly.com/PLACEHOLDER">Talk to an expert →</a>
+                        Already know what you need? <a href="{{ '/funnel/b/' | relative_url }}">Talk to an expert →</a>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
             </div>
             <div class="col-md-12 text-center">
                 <div class="funnel-cta">
-                    <a href="https://calendly.com/PLACEHOLDER">Find out which plan fits your situation →</a>
+                    <a href="{{ '/funnel/a/' | relative_url }}">Find out which plan fits your situation →</a>
                 </div>
             </div>
         </div>
@@ -203,7 +203,7 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
                     <h4>STARTER</h4>
                     <h2>$29<span>/month</span></h2>
                     <p>Start building secure identity management today with unlimited users and all core Keycloak authentication features. Perfect for developers testing IAM integration. Get started with straightforward single-cluster setup, email support, and transparent pricing - no setup fees, no surprises.</p>
-                    <a href="https://calendly.com/PLACEHOLDER" class="detailsbtn">Get Started</a>
+                    <a href="{{ '/funnel/a/?plan=starter' | relative_url }}" class="detailsbtn">Start Free Trial</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -211,7 +211,7 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
                     <h4>Professional</h4>
                     <h2>$99<span>/month</span></h2>
                     <p>Enjoy unlimited users, 5 realms, and 25 OIDC/SAML clients on a dedicated cluster with global region hosting options. Advanced auth, full branding, LDAP/AD integration, and priority support ensure seamless, compliant identity management. 99.9% SLA guarantees reliability. Perfect for startups and agencies.</p>
-                    <a href="https://calendly.com/PLACEHOLDER" class="detailsbtn">Get Started</a>
+                    <a href="{{ '/funnel/a/?plan=professional' | relative_url }}" class="detailsbtn">Start Free Trial</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -219,7 +219,7 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
                     <h4>Business</h4>
                     <h2>$299<span>/month</span></h2>
                     <p>Get unlimited realms, OIDC/SAML clients, and custom domains on a high-availability cluster. Advanced auth, white-label branding, 24/7 critical support, and 99.95% SLA ensure compliance (GDPR, SOC 2, ISO 27001). Ideal for scale-ups and regulated industries.</p>
-                    <a href="https://calendly.com/PLACEHOLDER" class="detailsbtn">Talk to Us</a>
+                    <a href="{{ '/funnel/b/' | relative_url }}" class="detailsbtn">Talk to Us</a>
                 </div>
             </div>
         </div>
@@ -298,6 +298,11 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin-top: 40px;">
+                <a href="{{ '/funnel/a/' | relative_url }}" class="getbtn">Ready to get started? Choose your plan</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -317,6 +322,9 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
             <div class="col-md-6 float-right text-right whychooseimg">
                 <img src="{{ '/assets/images/chooseus.png' | relative_url }}" alt="" class="img-fluid">
             </div>
+            <div class="col-md-12 text-center" style="margin-top: 40px;">
+                <a href="{{ '/funnel/a/' | relative_url }}" class="getbtn">See it in action — Start your free trial</a>
+            </div>
         </div>
     </div>
 </div>
@@ -324,17 +332,10 @@ description: Secure, Scalable Keycloak Hosting. Ready in Minutes. Simplify Ident
 <div class="downfromarea" id="download">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <h2>Get the Free Keycloak Guide</h2>
                 <p>20 real-world use cases - used by 500+ IAM teams</p>
-            </div>
-            <div class="downfrombox">
-                <form action="https://formspree.io/f/mwvvbrgg" method="POST">
-                    <input type="text" name="first_name" class="textbox" placeholder="First Name" required>
-                    <input type="text" name="last_name" class="textbox" placeholder="Last Name" required>
-                    <input type="email" name="email" class="textbox" placeholder="Email address" required>
-                    <input type="submit" class="submitntn" value="Request Link">
-                </form>
+                <a href="{{ '/funnel/c/' | relative_url }}" class="getbtn" style="margin-top: 20px;">Get the Free Guide</a>
             </div>
         </div>
     </div>

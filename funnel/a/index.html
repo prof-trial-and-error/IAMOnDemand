@@ -1,0 +1,39 @@
+---
+layout: funnel
+title: Find Your Plan
+funnel_id: a
+funnel_step: 1
+funnel_total: 5
+step_name: q1_situation
+sitemap: false
+---
+
+<h2 class="funnel-question">What best describes your situation?</h2>
+<p class="funnel-subtitle">This helps us recommend the right plan for you.</p>
+
+<div class="funnel-options">
+    <a href="{{ '/funnel/a/needs/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"lane":"small","situation":"builder"}'
+       data-value="builder">
+        I'm building a new app or MVP
+    </a>
+    <a href="{{ '/funnel/a/needs/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"lane":"small","situation":"scaling"}'
+       data-value="scaling">
+        I need SSO for my growing team
+    </a>
+    <a href="{{ '/funnel/a/needs/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"lane":"large","situation":"replacing"}'
+       data-value="replacing">
+        I'm replacing an existing IAM vendor
+    </a>
+    <a href="{{ '/funnel/a/needs/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"lane":"large","situation":"compliance"}'
+       data-value="compliance">
+        I need compliance-ready identity management
+    </a>
+</div>

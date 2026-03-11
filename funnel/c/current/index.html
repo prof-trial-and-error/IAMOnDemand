@@ -1,0 +1,39 @@
+---
+layout: funnel
+title: Current IAM
+funnel_id: c
+funnel_step: 2
+funnel_total: 4
+step_name: q2_current_iam
+sitemap: false
+---
+
+<h2 class="funnel-question">Are you currently using an IAM solution?</h2>
+<p class="funnel-subtitle">This helps us personalize the guide for you.</p>
+
+<div class="funnel-options">
+    <a href="{{ '/funnel/c/download/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"current_iam":"commercial"}'
+       data-value="commercial">
+        Yes — a commercial product (Auth0, Okta, etc.)
+    </a>
+    <a href="{{ '/funnel/c/download/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"current_iam":"self-hosted-keycloak"}'
+       data-value="self-hosted-keycloak">
+        Yes — self-hosted Keycloak
+    </a>
+    <a href="{{ '/funnel/c/download/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"current_iam":"other-oss"}'
+       data-value="other-oss">
+        Yes — another open-source solution
+    </a>
+    <a href="{{ '/funnel/c/download/' | relative_url }}"
+       class="funnel-option-btn"
+       data-params='{"current_iam":"none"}'
+       data-value="none">
+        No — starting fresh
+    </a>
+</div>
