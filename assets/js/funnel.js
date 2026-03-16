@@ -276,6 +276,30 @@
                 step_name: main.dataset.stepName || '',
                 step_number: parseInt(main.dataset.stepNumber, 10) || 0
             });
+
+            // Funnel B: fire funnel_complete and POST qualification data when
+            // user reaches the booking page (no form — booking happens on Google's side)
+            if (main.dataset.funnelId === 'b' && main.dataset.stepName === 'book_form') {
+                var params = getParams();
+                trackStep('funnel_complete', {
+                    funnel_id: 'b',
+                    tier: '',
+                    tags: Object.keys(params).map(function (k) { return k + ':' + params[k]; }).join(',')
+                });
+
+                // Send qualification data to Google Apps Script (fire-and-forget)
+                var urlParams = new URLSearchParams(window.location.search);
+                var formData = new FormData();
+                formData.append('challenge', urlParams.get('challenge') || '');
+                formData.append('apps', urlParams.get('apps') || '');
+                formData.append('compliance', urlParams.get('compliance') || '');
+                formData.append('timeline', urlParams.get('timeline') || '');
+
+                fetch('https://script.google.com/macros/s/AKfycbxA8aAHD1v6SP0bFWQLSIZr6Utity0g7cQeWhe95MyPrJFfY0DDHQz73gCv6t3McqTLwg/exec', {
+                    method: 'POST',
+                    body: formData
+                });
+            }
         }
 
         // Check for direct entry (Funnel A only)
